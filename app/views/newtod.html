@@ -1,0 +1,116 @@
+<md-dialog aria-label="Nuevo documento" ng-cloak>
+  <form>
+
+    <!--  BARRA SUPERIOR -->
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Nuevo documento</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon class="material-icons" aria-label="Close dialog"> close </md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+
+    <!--  CONTENIDO -->
+
+    <!--  Barra de busqueda -->
+    <div layout="row" layout-align="center center" style="width: 100%;">
+      <!--  http://codepen.io/kyleledbetter/pen/gbQOaV -->
+      <md-input-container style="width: 50%; margin-top: 30px; margin-bottom: 0px" md-no-float class="md-icon-float md-icon-right">
+        <input ng-model="tod.search" type="text" placeholder="Tipo de documento">
+        <md-icon class="material-icons" aria-label="Buscar"> search </md-icon>
+      </md-input-container>
+    </div>
+
+    <!-- Descripcion del tipo de objeto documental -->
+    <div layout-margin layout="row" layout-align="center center">
+      <span style="color: rgba(0,0,0,0.54); font-size: 14px; text-align: center;">
+        Descripcion del Tipo de Objeto Documental seleccionado... Descripcion del Tipo de Objeto Documental seleccionado... Descripcion del Tipo de Objeto Documental seleccionado
+      </span>
+    </div>
+
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="row" layout-wrap layout-margin>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center"> Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+      </div>
+    </md-dialog-content>
+
+
+    <!--  ACCIONES -->
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer('not useful')">
+        Cancelar
+      </md-button>
+      <md-button ng-click="answer('useful')" style="margin-right:20px;">
+        Crear
+      </md-button>
+    </md-dialog-actions>
+
+  </form>
+</md-dialog>

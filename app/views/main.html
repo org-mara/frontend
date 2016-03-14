@@ -1,0 +1,103 @@
+<div layout="column" style="height: 100%">
+
+<!-- BARRA SUPERIOR  -->
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" ng-click="toggleSidenav()" hide-gt-md class="md-icon-button" aria-label="Settings">
+         <md-icon class="material-icons"> menu </md-icon>
+      </md-button>
+      <h2>
+        <span> Mara </span>
+      </h2>
+      <span flex></span>
+      <!-- <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon class="material-icons"> search </md-icon>
+      </md-button> -->
+    </div>
+  </md-toolbar>
+
+
+<!--  CONTENIDO -->
+  <div layout="column" style="bottom:0px; top:64px; position:absolute; width: 100%;" ng-cloak="">
+    <section layout="row" flex="">
+
+      <!--  PANEL IZQUIERDO -->
+      <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4">
+        <md-toolbar class="md-theme-indigo">
+          <h1 class="md-toolbar-tools"> Cositas... </h1>
+          <h1 class="md-toolbar-tools"> . . . de MARA </h1>
+        </md-toolbar>
+
+         <section layout="row" layout-align="center center" layout-wrap>
+           <md-button class="md-raised md-primary" ng-click="showAdvanced($event)"> Nuevo </md-button>
+         </section>
+
+         <!-- MENU DE OPCIONES -->
+
+         <div style="display:flex;overflow:auto;">
+           <ul class="unstyled minimized fade" style="width: 100%;">
+
+             <!-- INBOX -->
+             <li>  <!-- Tamaño de la fila  style="font-size: 1rem;" -->
+               <a href="#" class="waves-effect list-item" style="padding-left:16px">
+                 <div class="pull-left truncate">
+                   <md-icon class="material-icons"> inbox </md-icon> Inbox
+                 </div>
+                 <!-- <div class="pull-right">
+                   <i class="icon icon-arrow-down6 toggle" data-class="icon-arrow-down6" data-altclass="icon-arrow-up5"></i>
+                 </div> -->
+               </a>
+             </li>
+
+              <!-- DOCUMENTOS -->
+              <li>  <!-- Tamaño de la fila  style="font-size: 1rem;" -->
+                 <!-- ver onFinishRender en controlador, es para que carguen los hijos-->
+                <a href="#" class="waves-effect list-item" style="padding-left:16px">
+                 <div class="pull-left truncate">
+                    <md-icon class="material-icons"> dns </md-icon> Documentos
+                  </div>
+                  <div class="pull-right">
+                    <!-- <i class="icon icon-arrow-down6 toggle" data-class="icon-arrow-down6" data-altclass="icon-arrow-up5"></i> -->
+                    <i class="material-icons toggle"> keyboard_arrow_down</i>
+                  </div>
+                </a>
+
+                <ul >
+                  <li ng-repeat="document in documents.tod" on-finish-render>
+                    <a href="" class="waves-effect list-item base-padding" style="padding-left:15%">
+                      <div class="pull-left truncate">
+                        <!-- <img ng-src="{{country.flag}}" style="display:inline;width: 22px;"> -->
+                        {{document.name}}
+
+                        <!-- <ng-md-icon icon="flag" style="fill:#00BCD4;cursor:pointer;" size="14" ></ng-md-icon> {{country.common_name}} -->
+                      </div>
+                    </a>
+                  </li> <!-- cierre de pais -->
+                </ul>  <!-- cierre de lista de paises -->
+
+              </li>
+
+           </ul>
+         </div>
+
+
+
+
+
+
+
+      </md-sidenav>
+
+      <!--  PANEL DERECHO -->
+      <md-content flex="" layout-padding="">
+        <div layout="column" layout-fill="" layout-align="top center">
+          contenido
+        </div>
+        <div flex=""></div>
+      </md-content>
+
+    </section>
+  </div>
+
+
+</div>
