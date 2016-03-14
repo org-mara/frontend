@@ -73,14 +73,6 @@ angular.module('frontendApp')
         ]
       };
 
-
-
-      //VER LO DEL COLOR D ELA PAGINA   http://www.materialui.co/colors
-      // $mdThemingProvider.theme('default')
-      //   .primaryPalette('pink')
-      //   .accentPalette('orange');
-
-
   }])
 
 // Mugre para que funcione el menu
