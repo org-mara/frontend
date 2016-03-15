@@ -53,67 +53,77 @@ angular.module('frontendApp')
       $scope.documents = {
         "tod": [
           {
-            "name" : "Acta"
+            "name" : "Acta",
+            "identifier" : "ACTA"
           },
           {
-            "name" : "Dictamen"
+            "name" : "Dictamen",
+            "identifier" : "DICT"
           },
           {
-            "name" : "Resolución"
+            "name" : "Expediente",
+            "identifier" : "EXP"
           },
           {
-            "name" : "Ordenanza"
+            "name" : "Nota",
+            "identifier" : "NOTA"
           },
           {
-            "name" : "Nota"
+            "name" : "Ordenanza",
+            "identifier" : "ORDE"
           },
           {
-            "name" : "Providencia"
+            "name" : "Providencia",
+            "identifier" : "PROV"
+          },
+          {
+            "name" : "Resolución",
+            "identifier" : "RESO"
           }
         ]
       };
 
   }])
 
-// Mugre para que funcione el menu
-        .directive('onFinishRender', function ($timeout) {
-            return {
-                restrict: 'A',
-                link: function (scope, element, attr) {
-                    if (scope.$last === true) {
-                        $timeout(function () {
+  // Mugre para que funcione el menu
+  .directive('onFinishRender', function ($timeout) {
+    return {
+      restrict: 'A',
+      link: function (scope, element, attr) {
+        if (scope.$last === true) {
+          $timeout(function () {
 
-                          // Enables expand functionality in subtrees.
-                              var activateLists = function() {
-                                // alert("ALE");
-                                return $('.minimized li a').on('click', function() {
-                                  var children, obj, toggle;
-                                  obj = $(this);
-                                  if (obj.attr('href') === '#') {
-                                    children = obj.parent().children('ul');
-                                    toggle = obj.find('.toggle');
-                                    if (children.hasClass('opened')) {
-                                      children.removeClass('opened');
-                                      toggle.removeClass(toggle.attr('data-altclass'));
-                                      toggle.addClass(toggle.attr('data-class'));
-                                      children.slideUp('fast');
-                                    } else {
-                                      children.addClass('opened');
-                                      toggle.removeClass(toggle.attr('data-class'));
-                                      toggle.addClass(toggle.attr('data-altclass'));
-                                      children.slideDown('fast');
-                                    }
-                                    return false;
-                                  }
-                                })
-                              };
-                          activateLists();
-
-                        });
-                    }
+            // Enables expand functionality in subtrees.
+            var activateLists = function() {
+              // alert("ALE");
+              return $('.minimized li a').on('click', function() {
+                var children, obj, toggle;
+                obj = $(this);
+                if (obj.attr('href') === '#') {
+                  children = obj.parent().children('ul');
+                  toggle = obj.find('.toggle');
+                  if (children.hasClass('opened')) {
+                    children.removeClass('opened');
+                    toggle.removeClass(toggle.attr('data-altclass'));
+                    toggle.addClass(toggle.attr('data-class'));
+                    children.slideUp('fast');
+                  } else {
+                    children.addClass('opened');
+                    toggle.removeClass(toggle.attr('data-class'));
+                    toggle.addClass(toggle.attr('data-altclass'));
+                    children.slideDown('fast');
+                  }
+                  return false;
                 }
-            }
-            });
+              })
+            };
+            activateLists();
+
+          });
+        }
+      }
+    }
+  });
 
   // **************** PAISES TEST DE MENU  **************** //
 // .factory('dataFactory', ['$http',function($http){
