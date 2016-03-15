@@ -23,6 +23,7 @@ angular.module('frontendApp')
 
 // **************** DIALOG **************** //
     var dialogController = function($scope, $mdDialog){
+
       $scope.hide = function() {
         $mdDialog.hide();
       };
@@ -85,7 +86,8 @@ angular.module('frontendApp')
 
   }])
 
-  // Mugre para que funcione el menu
+
+  // Directiva para dar funcionamiento al Menu izquierdo
   .directive('onFinishRender', function ($timeout) {
     return {
       restrict: 'A',

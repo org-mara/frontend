@@ -64,7 +64,7 @@
 
                 <ul >
                   <li ng-repeat="document in documents.tod" on-finish-render>
-                    <a href="" ui-sref="index.{{document.identifier}}" class="waves-effect list-item base-padding" style="padding-left:15%">
+                    <a ui-sref="index.{{document.identifier}}" class="waves-effect list-item base-padding" style="padding-left:15%">
                       <div class="pull-left truncate">
                         <!-- <img ng-src="{{country.flag}}" style="display:inline;width: 22px;"> -->
                         {{document.name}}
@@ -72,13 +72,6 @@
                       </div>
                     </a>
                   </li>
-                  <!-- <li on-finish-render>
-                    <a ui-sref="index.test" class="waves-effect list-item base-padding" style="padding-left:15%">
-                      <div class="pull-left truncate">
-                        Test
-                      </div>
-                    </a>
-                  </li> -->
                 </ul>
 
               </li>
@@ -91,11 +84,11 @@
       </md-sidenav>
 
       <!--  PANEL DERECHO -->
-      <md-content flex="" layout-padding="">
-        <div layout="column" layout-fill="" layout-align="top center">
+      <md-content flex layout-padding>
+        <div layout="column" layout-fill layout-align="top center">
           <div ui-view></div>
         </div>
-        <div flex=""></div>
+        <div flex></div>
       </md-content>
 
     </section>
