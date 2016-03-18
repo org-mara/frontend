@@ -58,6 +58,10 @@ angular.module('frontendApp')
             "identifier" : "ACTA"
           },
           {
+            "name" : "Anexo",
+            "identifier" : "ANEX"
+          },
+          {
             "name" : "Dictamen",
             "identifier" : "DICT"
           },

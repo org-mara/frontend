@@ -1,1 +1,120 @@
-<p>This is the anex view.</p>
+<div layout="column" style="height:500px;" ng-cloak>
+  <section layout="row" flex>
+
+    <md-content flex layout-padding>
+
+      <!--  Barra de busqueda -->
+      <div layout="row" layout-wrap layout-margin layout-align="center center">
+        <md-input-container md-no-float class="md-icon-float md-icon-right">
+          <input ng-model="tod.search" type="text" placeholder="Documento">
+          <md-icon class="material-icons" aria-label="Buscar"> search </md-icon>
+        </md-input-container>
+      </div>
+
+      <!-- LISTADO DE DOCUMENTOS -->
+      <div layout="row" layout-wrap layout-margin layout-align="start center">
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+      </div>
+
+    </md-content>
+
+    <!-- PANEL IZQUIERDO  -->
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+      <md-toolbar class="md-theme-light">
+        <div class="md-toolbar-tools">
+          <h1> Nombre del documento </h1>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="close()">
+            <md-icon class="material-icons" aria-label="Close dialog"> close </md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <!--  PESTAÑAS CON INFO DE UN DOCUMENTO -->
+      <md-content>
+
+        <!-- INFORMACION DEL DOCUMENTOS (METADATOS) -->
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="Información">
+            <md-content class="md-padding">
+              <p>aqui metadatos</p>
+            </md-content>
+          </md-tab>
+
+          <!-- VERSIONES DEL DOCUMENTO -->
+          <md-tab label="Historial">
+            <md-content class="md-padding">
+              <p>aqui versiones</p>
+            </md-content>
+          </md-tab>
+
+          <!-- ACTIVIDADSE SOBRE EL DOCUMENTO -->
+          <md-tab label="Actividades">
+            <md-content class="md-padding">
+              <p>aqui actividades</p>
+            </md-content>
+          </md-tab>
+        </md-tabs>
+
+      </md-content>
+
+    </md-sidenav>
+
+  </section>
+</div>

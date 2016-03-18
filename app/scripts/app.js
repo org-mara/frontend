@@ -44,6 +44,11 @@ angular
       templateUrl: 'views/acta.html',
       controller: 'ActaCtrl'
     })
+    .state('index.ANEX', {
+      url: '/anex',
+      templateUrl: 'views/anex.html',
+      controller: 'AnexCtrl'
+    })
     .state('index.DICT', {
       url: '/dict',
       templateUrl: 'views/dict.html',
