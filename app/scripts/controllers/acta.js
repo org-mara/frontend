@@ -12,16 +12,16 @@ angular.module('frontendApp')
 
 
     // **************** SIDENAV **************** //
-      $scope.close = function () {
+      $scope.sidenavflag = true;
+
+      $scope.closeRight = function () {
+        $scope.sidenavflag = false;
         $mdSidenav('right').close();
       };
 
-      $scope.isOpenRight = function(){
-        return $mdSidenav('right').isOpen();
+      $scope.openRight = function(){
+       $scope.sidenavflag = true;
       };
 
-      $scope.toggleRight = function () {
-        $mdSidenav('right').toggle();
-      };
-      
+
   }]);

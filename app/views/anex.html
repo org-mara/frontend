@@ -1,18 +1,82 @@
-<div layout="column" style="height:500px;" ng-cloak>
-  <section layout="row" flex>
+<div layout="column" ng-cloak  style="height: 100%;">
 
+
+  <!-- Botones -->
+  <section layout="row" layout-sm="column" layout-align="end center" layout-wrap >
+    <md-button class="md-icon-button md-primary" aria-label="Info"  ng-click="toggleRight()">
+        <md-icon class="material-icons" aria-label="Info"> info </md-icon>
+        <!--  AGREGAR style="color: algunColor" si el color queda como un gris no hqbilitqdo-->
+    </md-button>
+    <md-button class="md-icon-button md-primary" aria-label="Sort">
+        <md-icon class="material-icons" aria-label="Sort"> sort_by_alpha </md-icon>
+    </md-button>
+  </section>
+
+<!-- <div style="overflow: auto; height: 100%;"> -->
+  <section layout="row"  style="overflow: auto;">
     <md-content flex layout-padding>
 
-      <!--  Barra de busqueda -->
-      <div layout="row" layout-wrap layout-margin layout-align="center center">
-        <md-input-container md-no-float class="md-icon-float md-icon-right">
-          <input ng-model="tod.search" type="text" placeholder="Documento">
-          <md-icon class="material-icons" aria-label="Buscar"> search </md-icon>
-        </md-input-container>
-      </div>
-
       <!-- LISTADO DE DOCUMENTOS -->
-      <div layout="row" layout-wrap layout-margin layout-align="start center">
+      <div layout="row" layout-wrap layout-margin layout-align="start center"  >
+        <div style="min-width: 15%;" layout="column" layout-align="center" >
+          <!-- <md-button class="md-fab md-mini md-primary" aria-label="Info"> -->
+            <!-- <md-icon class="material-icons md-accent" aria-label="Info" ng-click=""> info </md-icon> -->
+          <!-- </md-button> -->
+          <img src="images/nota.svg" ng-click="toggleRight()"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
         <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
           <img src="images/nota.svg"/>
           <div style="text-align: center">Nota {{document.name}} </div>
@@ -69,12 +133,81 @@
           <img src="images/nota.svg"/>
           <div style="text-align: center">Nota {{document.name}} </div>
         </div>
-      </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-click="toggleRight()">
+          <img src="images/nota.svg"/>
+          <div style="text-align: center">Nota {{document.name}} </div>
+        </div>
+    </div>
 
     </md-content>
 
     <!-- PANEL IZQUIERDO  -->
-    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+  <div layout="row" style="bottom:0px; top:64px; position:absolute; width: 100%;" ng-cloak>
+    <md-sidenav class="md-sidenav-right" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4">
 
       <md-toolbar class="md-theme-light">
         <div class="md-toolbar-tools">
@@ -86,26 +219,41 @@
         </div>
       </md-toolbar>
 
+    </md-sidenav>
+  </div>
+    <!-- <div style="bottom:0px; top:64px; position:absolute; width: 100%;" ng-cloak> -->
+    <!-- <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+      <md-toolbar class="md-theme-light">
+        <div class="md-toolbar-tools">
+          <h1> Nombre del documento </h1>
+          <span flex></span>
+          <md-button class="md-icon-button" ng-click="close()">
+            <md-icon class="material-icons" aria-label="Close dialog"> close </md-icon>
+          </md-button>
+        </div>
+      </md-toolbar> -->
+
       <!--  PESTAÑAS CON INFO DE UN DOCUMENTO -->
-      <md-content>
+      <!-- <md-content> -->
 
         <!-- INFORMACION DEL DOCUMENTOS (METADATOS) -->
-        <md-tabs md-dynamic-height md-border-bottom>
+        <!-- <md-tabs md-dynamic-height md-border-bottom>
           <md-tab label="Información">
             <md-content class="md-padding">
               <p>aqui metadatos</p>
             </md-content>
-          </md-tab>
+          </md-tab> -->
 
           <!-- VERSIONES DEL DOCUMENTO -->
-          <md-tab label="Historial">
+          <!-- <md-tab label="Historial">
             <md-content class="md-padding">
               <p>aqui versiones</p>
             </md-content>
-          </md-tab>
+          </md-tab> -->
 
           <!-- ACTIVIDADSE SOBRE EL DOCUMENTO -->
-          <md-tab label="Actividades">
+          <!-- <md-tab label="Actividades">
             <md-content class="md-padding">
               <p>aqui actividades</p>
             </md-content>
@@ -114,7 +262,8 @@
 
       </md-content>
 
-    </md-sidenav>
+    </md-sidenav> -->
 
   </section>
+<!-- </div> -->
 </div>

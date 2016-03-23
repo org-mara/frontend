@@ -33,6 +33,86 @@ angular.module('frontendApp')
       $scope.answer = function(answer) {
         $mdDialog.hide(answer);
       };
+
+      $scope.tods = {
+        "unc": [
+          {
+            "name" : "Acta",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "ACTA"
+          },
+          {
+            "name" : "Anexo",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "ANEX"
+          },
+          {
+            "name" : "Cédula de notificación",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "CEDU"
+          },
+          {
+            "name" : "Comunicación",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "COMU"
+          },
+          {
+            "name" : "Conclusión sumarial",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "CONCL"
+          },
+          {
+            "name" : "Dictamen",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "DICT"
+          },
+          {
+            "name" : "Disposición",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "DISP"
+          },
+          {
+            "name" : "Expediente",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "EXP"
+          },
+          {
+            "name" : "Informe",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "INFO"
+          },
+          {
+            "name" : "Memorando",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "MEMO"
+          },
+          {
+            "name" : "Nota",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "NOTA"
+          },
+          {
+            "name" : "Oficio",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "OFIC"
+          },
+          {
+            "name" : "Ordenanza",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "ORDE"
+          },
+          {
+            "name" : "Providencia",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "PROV"
+          },
+          {
+            "name" : "Resolución",
+            "icon" : "images/nota.svg",
+            "idnetifier" : "RESO"
+          }
+        ]
+      }
     };
 
     $scope.showAdvanced = function(ev) {
@@ -82,6 +162,30 @@ angular.module('frontendApp')
             "identifier" : "PROV"
           },
           {
+            "name" : "Anexo2",
+            "identifier" : "ANEX2"
+          },
+          {
+            "name" : "Dictamen2",
+            "identifier" : "DICT2"
+          },
+          {
+            "name" : "Expediente2",
+            "identifier" : "EXP2"
+          },
+          {
+            "name" : "Nota2",
+            "identifier" : "NOTA2"
+          },
+          {
+            "name" : "Ordenanza2",
+            "identifier" : "ORDE2"
+          },
+          {
+            "name" : "Providencia2",
+            "identifier" : "PROV2"
+          },
+          {
             "name" : "Resolución",
             "identifier" : "RESO"
           }
@@ -101,7 +205,6 @@ angular.module('frontendApp')
 
             // Enables expand functionality in subtrees.
             var activateLists = function() {
-              // alert("ALE");
               return $('.minimized li a').on('click', function() {
                 var children, obj, toggle;
                 obj = $(this);

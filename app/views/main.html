@@ -1,39 +1,51 @@
 <div layout="column" style="height: 100%">
 
+
 <!-- BARRA SUPERIOR  -->
   <md-toolbar>
     <div class="md-toolbar-tools">
-      <md-button class="md-icon-button" ng-click="toggleSidenav()" hide-gt-md class="md-icon-button" aria-label="Settings">
-         <md-icon class="material-icons"> menu </md-icon>
-      </md-button>
-      <h2>
-        <span> Mara </span>
-      </h2>
-      <span flex></span>
-      <!-- <md-button class="md-icon-button" aria-label="Settings">
-          <md-icon class="material-icons"> search </md-icon>
-      </md-button> -->
+
+    <!--  Nombre sistema y menu al minimizar el browser -->
+      <div>
+        <md-button class="md-icon-button" ng-click="toggleSidenav()" hide-gt-md class="md-icon-button" aria-label="Settings">
+           <md-icon class="material-icons"> menu </md-icon>
+        </md-button>
+        <div hide-sm hide-md hide-xs>
+          <h2> Mara </h2>
+        </div>
+      </div>
+
+      <!-- Barra de busqueda -->
+      <div layout="row" layout-align="center center" style="width: 90%;">
+        <md-input-container style="width: 50%; margin-top: 30px; margin-bottom: 0px" md-no-float class="md-icon-float md-icon-right">
+          <input ng-model="tod.search" type="text" placeholder="Buscar documentos">
+          <md-icon class="material-icons search" aria-label="Buscar"> search </md-icon>
+        </md-input-container>
+      </div>
+
+      <!-- Perfil usuario -->
+      <div class="md-subhead"> romina.racca </div>
+
     </div>
   </md-toolbar>
 
 
 <!--  CONTENIDO -->
-  <div layout="column" style="bottom:0px; top:64px; position:absolute; width: 100%;" ng-cloak="">
-    <section layout="row" flex="">
+  <div layout="row" style="bottom:0px; top:64px; position:absolute; width: 100%;" ng-cloak>
 
+    <!-- <section layout="row" flex=""> -->
       <!--  PANEL IZQUIERDO -->
       <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4">
-        <md-toolbar class="md-theme-indigo">
+        <!-- <md-toolbar class="md-theme-indigo">
           <h1 class="md-toolbar-tools"> Cositas... </h1>
           <h1 class="md-toolbar-tools"> . . . de MARA </h1>
-        </md-toolbar>
+        </md-toolbar> -->
 
-         <section layout="row" layout-align="center center" layout-wrap>
+         <section layout="row" layout-align="center center" layout-wrap style="margin-top: 15px; margin-bottom: 15px;">
            <md-button class="md-raised md-primary" ng-click="showAdvanced($event)"> Nuevo </md-button>
          </section>
 
          <!-- MENU DE OPCIONES -->
-
          <div style="display:flex;overflow:auto;">
            <ul class="unstyled minimized fade" style="width: 100%;">
 
@@ -58,11 +70,10 @@
                   </div>
                   <div class="pull-right">
                     <!-- <i class="icon icon-arrow-down6 toggle" data-class="icon-arrow-down6" data-altclass="icon-arrow-up5"></i> -->
-                    <i class="material-icons toggle"> keyboard_arrow_down</i>
+                    <md-icon class="material-icons"> keyboard_arrow_down</md-icon>
                   </div>
                 </a>
-
-                <ul >
+                <ul>
                   <li ng-repeat="document in documents.tod" on-finish-render>
                     <a ui-sref="index.{{document.identifier}}" class="waves-effect list-item base-padding" style="padding-left:15%">
                       <div class="pull-left truncate">
@@ -79,19 +90,16 @@
            </ul>
          </div>
 
-
-
       </md-sidenav>
 
       <!--  PANEL DERECHO -->
-      <md-content flex layout-padding>
+      <!-- <md-content> -->
         <div layout="column" layout-fill layout-align="top center">
-          <div ui-view></div>
+          <div ui-view style="height: 100%; width: 100%;"></div>
         </div>
-        <div flex></div>
-      </md-content>
+      <!-- </md-content> -->
 
-    </section>
+    <!-- </section> -->
   </div>
 
 
