@@ -120,6 +120,8 @@ angular.module('frontendApp')
       }
     };
 
+    $scope.selected = null;
+
     $scope.showAdvanced = function(ev) {
         $mdDialog.show({
           controller: dialogController,
@@ -130,8 +132,10 @@ angular.module('frontendApp')
         })
         .then(function(answer) {
            console.log(answer);  //TOD que he seleccionado para crear
+           $scope.selected = answer;
          });
       };
+
 
     $scope.documents = {
       "tod": [
