@@ -34,50 +34,55 @@ angular
 
     // Set up the states
     $stateProvider
-    .state('index', {
-      url: '/main',
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
-    })
-    .state('index.ACTA', {
-      url: '/acta',
-      templateUrl: 'views/acta.html',
-      controller: 'ActaCtrl'
-    })
-    .state('index.ANEX', {
-      url: '/anex',
-      templateUrl: 'views/anex.html',
-      controller: 'AnexCtrl'
-    })
-    .state('index.DICT', {
-      url: '/dict',
-      templateUrl: 'views/dict.html',
-      controller: 'DictCtrl'
-    })
-    .state('index.EXP', {
-      url: '/exp',
-      templateUrl: 'views/exp.html',
-      controller: 'ExpCtrl'
-    })
-    .state('index.NOTA', {
-      url: '/nota',
-      templateUrl: 'views/nota.html',
-      controller: 'NotaCtrl'
-    })
-    .state('index.ORDE', {
-      url: '/orde',
-      templateUrl: 'views/orde.html',
-      controller: 'OrdeCtrl'
-    })
-    .state('index.PROV', {
-      url: '/prov',
-      templateUrl: 'views/prov.html',
-      controller: 'ProvCtrl'
-    })
-    .state('index.RESO', {
-      url: '/reso',
-      templateUrl: 'views/reso.html',
-      controller: 'ResoCtrl'
-    })
+      .state('index', {
+        url: '/main',
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .state('index.ACTA', {
+        url: '/acta',
+        templateUrl: 'views/acta.html',
+        controller: 'ActaCtrl'
+      })
+      .state('index.ANEX', {
+        url: '/anex',
+        templateUrl: 'views/anex.html',
+        controller: 'AnexCtrl'
+      })
+      .state('index.DICT', {
+        url: '/dict',
+        templateUrl: 'views/dict.html',
+        controller: 'DictCtrl'
+      })
+      .state('index.EXP', {
+        url: '/exp',
+        templateUrl: 'views/exp.html',
+        controller: 'ExpCtrl'
+      })
+      .state('index.NOTA', {
+        url: '/nota',
+        templateUrl: 'views/nota.html',
+        controller: 'NotaCtrl'
+      })
+      .state('index.ORDE', {
+        url: '/orde',
+        templateUrl: 'views/orde.html',
+        controller: 'OrdeCtrl'
+      })
+      .state('index.PROV', {
+        url: '/prov',
+        templateUrl: 'views/prov.html',
+        controller: 'ProvCtrl'
+      })
+      .state('index.RESO', {
+        url: '/reso',
+        templateUrl: 'views/reso.html',
+        controller: 'ResoCtrl'
+      })
+      .state('index.template', {
+        url: '/todtemplate',
+        templateUrl: 'views/todtemplate.html',
+        controller: 'TodtemplateCtrl'
+      })
 
   });

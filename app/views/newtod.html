@@ -34,7 +34,7 @@
     <!-- Objetos documentales -->
     <md-dialog-content>
       <div class="md-dialog-content" layout="row" layout-wrap layout-margin >
-        <div style="min-width: 15%;" layout="column" layout-align="center" ng-repeat="tod in tods.unc">
+        <div style="min-width: 15%;" layout="column" layout-align="center" ng-repeat="tod in tods.unc" ng-click="selected($index)">
           <img src="images/nota.svg"/>
           <div style="text-align: center">{{tod.name}}</div>
         </div>
@@ -45,12 +45,14 @@
     <!--  ACCIONES -->
     <md-dialog-actions layout="row">
       <span flex></span>
-      <md-button ng-click="answer('not useful')">
+      <md-button ng-click="cancel()">
         Cancelar
       </md-button>
-      <md-button ng-click="answer('useful')" style="margin-right:20px;">
-        Crear
-      </md-button>
+      <a ui-sref="index.template">
+        <md-button ng-click="createDoc()" ng-disabled="(indice != null) ? false : true" style="margin-right:20px;">
+          Crear
+        </md-button>
+      </a>
     </md-dialog-actions>
 
   </form>

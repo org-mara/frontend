@@ -24,14 +24,19 @@ angular.module('frontendApp')
 // **************** DIALOG **************** //
     var dialogController = function($scope, $mdDialog){
 
-      $scope.hide = function() {
-        $mdDialog.hide();
-      };
+      $scope.indice = null;
+
       $scope.cancel = function() {
         $mdDialog.cancel();
+        $scope.indice = null;
       };
-      $scope.answer = function(answer) {
-        $mdDialog.hide(answer);
+
+      $scope.selected = function (index) {
+          $scope.indice = index;
+      };
+
+      $scope.createDoc = function() {
+        $mdDialog.hide($scope.tods.unc[$scope.indice])
       };
 
       $scope.tods = {
@@ -121,76 +126,75 @@ angular.module('frontendApp')
           templateUrl: '/views/newtod.html',
           parent: angular.element(document.body),
           targetEvent: ev,
-          clickOutsideToClose:true
+          clickOutsideToClose: true
         })
         .then(function(answer) {
-          $scope.status = 'You said the information was "' + answer + '".';
-        }, function() {
-          $scope.status = 'You cancelled the dialog.';
-        });
+           console.log(answer);  //TOD que he seleccionado para crear
+         });
       };
 
+    $scope.documents = {
+      "tod": [
+        {
+          "name" : "Acta",
+          "identifier" : "ACTA"
+        },
+        {
+          "name" : "Anexo",
+          "identifier" : "ANEX"
+        },
+        {
+          "name" : "Dictamen",
+          "identifier" : "DICT"
+        },
+        {
+          "name" : "Expediente",
+          "identifier" : "EXP"
+        },
+        {
+          "name" : "Nota",
+          "identifier" : "NOTA"
+        },
+        {
+          "name" : "Ordenanza",
+          "identifier" : "ORDE"
+        },
+        {
+          "name" : "Providencia",
+          "identifier" : "PROV"
+        },
+        {
+          "name" : "Anexo2",
+          "identifier" : "ANEX2"
+        },
+        {
+          "name" : "Dictamen2",
+          "identifier" : "DICT2"
+        },
+        {
+          "name" : "Expediente2",
+          "identifier" : "EXP2"
+        },
+        {
+          "name" : "Nota2",
+          "identifier" : "NOTA2"
+        },
+        {
+          "name" : "Ordenanza2",
+          "identifier" : "ORDE2"
+        },
+        {
+          "name" : "Providencia2",
+          "identifier" : "PROV2"
+        },
+        {
+          "name" : "Resolución",
+          "identifier" : "RESO"
+        }
+      ]
+    };
 
-      $scope.documents = {
-        "tod": [
-          {
-            "name" : "Acta",
-            "identifier" : "ACTA"
-          },
-          {
-            "name" : "Anexo",
-            "identifier" : "ANEX"
-          },
-          {
-            "name" : "Dictamen",
-            "identifier" : "DICT"
-          },
-          {
-            "name" : "Expediente",
-            "identifier" : "EXP"
-          },
-          {
-            "name" : "Nota",
-            "identifier" : "NOTA"
-          },
-          {
-            "name" : "Ordenanza",
-            "identifier" : "ORDE"
-          },
-          {
-            "name" : "Providencia",
-            "identifier" : "PROV"
-          },
-          {
-            "name" : "Anexo2",
-            "identifier" : "ANEX2"
-          },
-          {
-            "name" : "Dictamen2",
-            "identifier" : "DICT2"
-          },
-          {
-            "name" : "Expediente2",
-            "identifier" : "EXP2"
-          },
-          {
-            "name" : "Nota2",
-            "identifier" : "NOTA2"
-          },
-          {
-            "name" : "Ordenanza2",
-            "identifier" : "ORDE2"
-          },
-          {
-            "name" : "Providencia2",
-            "identifier" : "PROV2"
-          },
-          {
-            "name" : "Resolución",
-            "identifier" : "RESO"
-          }
-        ]
-      };
+
 
   }])
 
