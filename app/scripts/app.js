@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'ui.router'
+    'ui.router',
+    'cendra.builder'
   ])
 
   // COLOR
