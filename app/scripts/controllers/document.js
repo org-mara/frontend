@@ -2,16 +2,16 @@
 
 /**
  * @ngdoc function
- * @name frontendApp.controller:ActaCtrl
+ * @name frontendApp.controller:DocumentCtrl
  * @description
- * # ActaCtrl
+ * # DocumentCtrl
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-  .controller('ActaCtrl', ['$scope', '$mdSidenav', function ($scope, $mdSidenav) {
+  .controller('DocumentCtrl', ['$scope', '$mdSidenav', function ($scope, $mdSidenav) {
 
 
-    // **************** SIDENAV **************** //
+    // ******************************** SIDENAV ******************************** //
       $scope.sidenavflag = true;
 
       $scope.closeRight = function () {
@@ -23,5 +23,7 @@ angular.module('frontendApp')
        $scope.sidenavflag = true;
       };
 
+
+      // ********************************  ******************************** //
 
   }]);

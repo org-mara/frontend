@@ -10,7 +10,7 @@
 angular.module('frontendApp')
   .controller('TodtemplateCtrl', function ($scope) {
 
-    console.log($scope);
+    // console.log($scope);
 
     $scope.test = "prueba";
   });

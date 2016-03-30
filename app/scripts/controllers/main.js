@@ -11,7 +11,11 @@ angular.module('frontendApp')
   .controller('MainCtrl', ['$scope', '$mdDialog', '$mdSidenav', function ($scope, $mdDialog, $mdSidenav) {
 
 
-// **************** SIDENAV **************** //
+      $scope.todSelected = null;              //seleccion en el DIALOG de TOD para instanciar un nuevo Doumento
+      $scope.documentMenuSelected = null;     //seleccion de TOD en el MENU dentro de la lista de Documentos
+
+
+  // ******************************** SIDENAV ******************************** //
     $scope.close = function () {
       $mdSidenav('left').close();
     };
@@ -21,74 +25,78 @@ angular.module('frontendApp')
     };
 
 
-// **************** DIALOG **************** //
+  // ******************************** CONTROLADOR del DIALOG de boton NUEVO ******************************** //
     var dialogController = function($scope, $mdDialog){
 
       $scope.indice = null;
 
+      // boton CANCELAR
       $scope.cancel = function() {
         $mdDialog.cancel();
         $scope.indice = null;
       };
 
+      // Seleccion de un TOD
       $scope.selected = function (index) {
           $scope.indice = index;
       };
 
+      // boton CREAR
       $scope.createDoc = function() {
         $mdDialog.hide($scope.tods.unc[$scope.indice])
       };
 
+      // ********************************  Borrador hasta tener web services ******************************** //
       $scope.tods = {
         "unc": [
           {
             "name" : "Acta",
-            "icon" : "images/nota.svg",
+            "icon" : "images/acta.svg",
             "idnetifier" : "ACTA"
           },
           {
             "name" : "Anexo",
-            "icon" : "images/nota.svg",
+            "icon" : "images/anex.svg",
             "idnetifier" : "ANEX"
           },
           {
             "name" : "Cédula de notificación",
-            "icon" : "images/nota.svg",
+            "icon" : "images/cedu.svg",
             "idnetifier" : "CEDU"
           },
           {
             "name" : "Comunicación",
-            "icon" : "images/nota.svg",
+            "icon" : "images/comu.svg",
             "idnetifier" : "COMU"
           },
           {
             "name" : "Conclusión sumarial",
-            "icon" : "images/nota.svg",
+            "icon" : "images/concl.svg",
             "idnetifier" : "CONCL"
           },
           {
             "name" : "Dictamen",
-            "icon" : "images/nota.svg",
+            "icon" : "images/dict.svg",
             "idnetifier" : "DICT"
           },
           {
             "name" : "Disposición",
-            "icon" : "images/nota.svg",
+            "icon" : "images/disp.svg",
             "idnetifier" : "DISP"
           },
           {
             "name" : "Expediente",
-            "icon" : "images/nota.svg",
+            "icon" : "images/exp.svg",
             "idnetifier" : "EXP"
           },
           {
             "name" : "Informe",
-            "icon" : "images/nota.svg",
+            "icon" : "images/info.svg",
             "idnetifier" : "INFO"
           },
           {
             "name" : "Memorando",
-            "icon" : "images/nota.svg",
+            "icon" : "images/memo.svg",
             "idnetifier" : "MEMO"
           },
           {
@@ -98,31 +106,31 @@ angular.module('frontendApp')
           },
           {
             "name" : "Oficio",
-            "icon" : "images/nota.svg",
+            "icon" : "images/ofic.svg",
             "idnetifier" : "OFIC"
           },
           {
             "name" : "Ordenanza",
-            "icon" : "images/nota.svg",
+            "icon" : "images/orde.svg",
             "idnetifier" : "ORDE"
           },
           {
             "name" : "Providencia",
-            "icon" : "images/nota.svg",
+            "icon" : "images/prov.svg",
             "idnetifier" : "PROV"
           },
           {
             "name" : "Resolución",
-            "icon" : "images/nota.svg",
+            "icon" : "images/reso.svg",
             "idnetifier" : "RESO"
           }
         ]
       }
     };
 
-    $scope.selected = null;
 
-    $scope.showAdvanced = function(ev) {
+  // ********************************  DIALOG de boton NUEVO ******************************** //
+    $scope.newDocument = function(ev) {
         $mdDialog.show({
           controller: dialogController,
           templateUrl: '/views/newtod.html',
@@ -131,12 +139,19 @@ angular.module('frontendApp')
           clickOutsideToClose: true
         })
         .then(function(answer) {
-           console.log(answer);  //TOD que he seleccionado para crear
-           $scope.selected = answer;
+           console.log(answer);  //TOD que he seleccionado para instanciar un nuevo documento
+           $scope.todSelected = answer;
          });
       };
 
 
+  // ********************************  set TOD seleecionado dentro de Documentos en MENU IZQUIERDO ******************************** //
+    $scope.docMenuSelected = function (index) {
+      $scope.documentMenuSelected = $scope.documents.tod[index];
+    };
+
+
+  // ********************************  Borrador hasta tener web services ******************************** //
     $scope.documents = {
       "tod": [
         {
@@ -199,10 +214,10 @@ angular.module('frontendApp')
     };
 
 
-
   }])
 
 
+  // ******************************** MENU IZQUIERDO - DIRECTIVA ******************************** //
   // Directiva para dar funcionamiento al Menu izquierdo
   .directive('onFinishRender', function ($timeout) {
     return {
@@ -241,56 +256,3 @@ angular.module('frontendApp')
       }
     }
   });
-
-  // **************** PAISES TEST DE MENU  **************** //
-// .factory('dataFactory', ['$http',function($http){
-//
-//         var urlGeoObjectWS= 'https://geo-object-ws.unc.edu.ar/';
-//          var dataFactory = {};
-//
-//         dataFactory.getContinents=function(){
-//          return $http.get(urlGeoObjectWS + 'continents');
-//        };
-//
-//        dataFactory.getCountries=function(callback){
-//          var result = $http.get(urlGeoObjectWS + 'countries');
-//          if(callback) {
-//            result.then(function(response){
-//              callback(response.data);
-//            });
-//          } else {
-//            return result;
-//          }
-//        };
-//
-//        dataFactory.getCountriesFromContinent=function(continentCode){
-//          return $http.get(urlGeoObjectWS + 'continents/' + continentCode + '/countries');
-//        };
-//
-//        dataFactory.getCountry=function(searchFilters){
-//            searchFilters=searchFilters||{}; //Null parameter case
-//            return $http.get(urlGeoObjectWS + 'countries');
-//        };
-//
-//        dataFactory.getProvincesFromCountry=function(callback, countryCode){
-//          return $http.get(urlGeoObjectWS + 'countries/' + countryCode + '/provinces')
-//            .success(function(data){
-//              callback(data);
-//            })
-//            .error(function(error){
-//              callback([]);
-//            });
-//        };
-//
-//        dataFactory.getProvinceByCode = function(callback, provinceCode){
-//          return $http.get(urlGeoObjectWS + 'provinces/' + provinceCode)
-//            .success(function (province) {
-//              callback(province['org.geoobject.model.Province']);
-//            })
-//            .error(function (error) {
-//              console.error(error);
-//            });
-//        };
-//
-//        return dataFactory;
-//   }]);

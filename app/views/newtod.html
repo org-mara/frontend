@@ -35,7 +35,8 @@
     <md-dialog-content>
       <div class="md-dialog-content" layout="row" layout-wrap layout-margin >
         <div style="min-width: 15%;" layout="column" layout-align="center" ng-repeat="tod in tods.unc" ng-click="selected($index)">
-          <img src="images/nota.svg"/>
+
+          <img src="{{tod.icon}}"/>
           <div style="text-align: center">{{tod.name}}</div>
         </div>
       </div>

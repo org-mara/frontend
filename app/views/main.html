@@ -33,16 +33,12 @@
 <!--  CONTENIDO -->
   <div layout="row" style="bottom:0px; top:64px; position:absolute; width: 100%;" ng-cloak>
 
-    <!-- <section layout="row" flex=""> -->
       <!--  PANEL IZQUIERDO -->
       <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" md-whiteframe="4">
-        <!-- <md-toolbar class="md-theme-indigo">
-          <h1 class="md-toolbar-tools"> Cositas... </h1>
-          <h1 class="md-toolbar-tools"> . . . de MARA </h1>
-        </md-toolbar> -->
 
+        <!-- Boton NUEVO -->
          <section layout="row" layout-align="center center" layout-wrap style="margin-top: 15px; margin-bottom: 15px;">
-           <md-button class="md-raised md-primary" ng-click="showAdvanced($event)"> Nuevo </md-button>
+           <md-button class="md-raised md-primary" ng-click="newDocument($event)"> Nuevo </md-button>
          </section>
 
          <!-- MENU DE OPCIONES -->
@@ -51,7 +47,7 @@
 
              <!-- INBOX -->
              <li>  <!-- Tamaño de la fila  style="font-size: 1rem;" -->
-               <a href="#" class="waves-effect list-item" style="padding-left:16px">
+               <a class="waves-effect list-item" style="padding-left:16px">
                  <div class="pull-left truncate">
                    <md-icon class="material-icons"> inbox </md-icon> Inbox
                  </div>
@@ -75,16 +71,13 @@
                 </a>
                 <ul>
                   <li ng-repeat="document in documents.tod" on-finish-render>
-                    <a ui-sref="index.{{document.identifier}}" class="waves-effect list-item base-padding" style="padding-left:15%">
+                    <a ui-sref="index.document" class="waves-effect list-item base-padding" style="padding-left:15%" ng-click="docMenuSelected($index)">
                       <div class="pull-left truncate">
-                        <!-- <img ng-src="{{country.flag}}" style="display:inline;width: 22px;"> -->
                         {{document.name}}
-                        <!-- <ng-md-icon icon="flag" style="fill:#00BCD4;cursor:pointer;" size="14" ></ng-md-icon> {{country.common_name}} -->
                       </div>
                     </a>
                   </li>
                 </ul>
-
               </li>
 
            </ul>
@@ -93,14 +86,9 @@
       </md-sidenav>
 
       <!--  PANEL DERECHO -->
-      <!-- <md-content> -->
         <div layout="column" layout-fill layout-align="top center">
           <div ui-view style="height: 100%; width: 100%;"></div>
         </div>
-      <!-- </md-content> -->
 
-    <!-- </section> -->
-  </div>
-
-
+  </div> <!-- Fin de CONTENIDO  -->
 </div>
