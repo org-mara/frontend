@@ -24,7 +24,7 @@ angular
   // COLOR
   // .config(function($mdThemingProvider) {
   //   $mdThemingProvider.theme('default')
-  //   .primaryPalette('indigo')
+  //   .primaryPalette('blue-grey', {})
   //   .accentPalette('pink');
   // })
 
