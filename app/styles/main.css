@@ -5,6 +5,58 @@ body {
 }
 
 
+
+/**********************************  ESTILOS PARA DOCUMENT.html **********************************/
+md-content{
+ background-color: #fafafa;
+}
+
+md-content:focus{
+  outline: none;
+}
+
+/* Estilos para un documento selecionado*/
+.document-selected{
+  background-color:#CFD8DC;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
+}
+
+/* Tamaño minimo al achicar el listado de documentos en document.html*/
+.document-content{
+  height: 100%;
+  min-width: 340px;
+}
+
+/* Sombras para un documento selecionado */
+.document-border{
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  height: 37px;
+  width: 100%;
+}
+
+/* Estilo y tamaño del icono de la lista de documentos*/
+.document-icon-16{
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+/* Estilo y tamaño del icono de los detalles de la info de documentos*/
+.document-icon-24{
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+
+/**********************************  ESTILOS GENERALES **********************************/
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

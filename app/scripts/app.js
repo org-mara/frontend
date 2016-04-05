@@ -22,11 +22,11 @@ angular
   ])
 
   // COLOR
-  // .config(function($mdThemingProvider) {
-  //   $mdThemingProvider.theme('default')
-  //   .primaryPalette('blue-grey', {})
-  //   .accentPalette('pink');
-  // })
+  .config(function($mdThemingProvider) {
+    $mdThemingProvider.theme('default')
+    .primaryPalette('blue-grey', {})
+    .accentPalette('orange');
+  })
 
   .config(function ($stateProvider, $urlRouterProvider) {
 

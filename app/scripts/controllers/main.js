@@ -12,7 +12,7 @@ angular.module('frontendApp')
 
 
       $scope.todSelected = null;              //seleccion en el DIALOG de TOD para instanciar un nuevo Doumento
-      $scope.documentMenuSelected = null;     //seleccion de TOD en el MENU dentro de la lista de Documentos
+      $scope.documentMenuSelected = null;     //seleccion de TOD en el MENU (izquierdo) dentro de la lista de Documentos
 
 
   // ******************************** SIDENAV ******************************** //
