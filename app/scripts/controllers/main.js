@@ -156,59 +156,78 @@ angular.module('frontendApp')
       "tod": [
         {
           "name" : "Acta",
+          "icon" : "images/acta.svg",
           "identifier" : "ACTA"
         },
         {
           "name" : "Anexo",
+          "icon" : "images/anex.svg",
           "identifier" : "ANEX"
         },
         {
+          "name" : "Cédula de notificación",
+          "icon" : "images/cedu.svg",
+          "idnetifier" : "CEDU"
+        },
+        {
+          "name" : "Comunicación",
+          "icon" : "images/comu.svg",
+          "idnetifier" : "COMU"
+        },
+        {
+          "name" : "Conclusión sumarial",
+          "icon" : "images/concl.svg",
+          "idnetifier" : "CONCL"
+        },
+        {
           "name" : "Dictamen",
-          "identifier" : "DICT"
+          "icon" : "images/dict.svg",
+          "idnetifier" : "DICT"
+        },
+        {
+          "name" : "Disposición",
+          "icon" : "images/disp.svg",
+          "idnetifier" : "DISP"
         },
         {
           "name" : "Expediente",
-          "identifier" : "EXP"
+          "icon" : "images/exp.svg",
+          "idnetifier" : "EXP"
+        },
+        {
+          "name" : "Informe",
+          "icon" : "images/info.svg",
+          "idnetifier" : "INFO"
+        },
+        {
+          "name" : "Memorando",
+          "icon" : "images/memo.svg",
+          "idnetifier" : "MEMO"
         },
         {
           "name" : "Nota",
-          "identifier" : "NOTA"
+          "icon" : "images/nota.svg",
+          "idnetifier" : "NOTA"
+        },
+        {
+          "name" : "Oficio",
+          "icon" : "images/ofic.svg",
+          "idnetifier" : "OFIC"
         },
         {
           "name" : "Ordenanza",
-          "identifier" : "ORDE"
+          "icon" : "images/orde.svg",
+          "idnetifier" : "ORDE"
         },
         {
           "name" : "Providencia",
-          "identifier" : "PROV"
-        },
-        {
-          "name" : "Anexo2",
-          "identifier" : "ANEX2"
-        },
-        {
-          "name" : "Dictamen2",
-          "identifier" : "DICT2"
-        },
-        {
-          "name" : "Expediente2",
-          "identifier" : "EXP2"
-        },
-        {
-          "name" : "Nota2",
-          "identifier" : "NOTA2"
-        },
-        {
-          "name" : "Ordenanza2",
-          "identifier" : "ORDE2"
-        },
-        {
-          "name" : "Providencia2",
-          "identifier" : "PROV2"
+          "icon" : "images/prov.svg",
+          "idnetifier" : "PROV"
         },
         {
           "name" : "Resolución",
-          "identifier" : "RESO"
+          "icon" : "images/reso.svg",
+          "idnetifier" : "RESO"
         }
       ]
     };

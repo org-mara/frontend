@@ -1,7 +1,6 @@
 <div layout="column" ng-cloak style="height: 100%;">
   <section layout="row" style="height: 100%;">
 
-
         <!-- PANEL CENTRAL -->
     <div flex layout="column" class="document-content">
       <div layout="row" layout-align="end center" class="md-toolbar-tools" style="width: 100%;">
@@ -16,7 +15,8 @@
         </md-button> -->
       </div>
     <md-content layout="row" layout-wrap layout-align="center start" style="height: 100%;" ng-click="deselectedDoc()">
-      <div style="margin: 10px; outline: none;" layout="column" ng-click="openRight($event, $index)" ng-dblclick="showPDF()" ng-class="{'document-selected': isSelected($index)}" ng-repeat="doc in documents.docs">
+      <div style="margin: 10px; outline: none;" layout="column" ng-click="openRight($event, $index)" ng-dblclick="showPDF()"
+      ng-class="{'document-selected': isSelected($index)}" ng-repeat="doc in documents.docs">
         <img src="{{doc.preview}}"/>
         <div layout="row" layout-align="center center" class="document-border">
           <md-icon md-svg-src="{{doc.icon}}" class="document-icon-16"></md-icon>

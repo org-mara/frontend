@@ -8,7 +8,7 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-  .controller('TodtemplateCtrl', function ($scope) {
+  .controller('TodtemplateCtrl',  ['$scope', function ($scope) {
 
     // console.log($scope);
 
@@ -200,4 +200,4 @@ angular.module('frontendApp')
       }
       console.log($scope.test);
     }
-  });
+  }]);

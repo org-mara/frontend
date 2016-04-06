@@ -38,7 +38,7 @@
 
         <!-- Boton NUEVO -->
          <section layout="row" layout-align="center center" layout-wrap style="margin-top: 15px; margin-bottom: 15px;">
-           <md-button class="md-raised md-primary" ng-click="newDocument($event)"> Nuevo </md-button>
+           <md-button class="md-raised md-accent" style="color:white" ng-click="newDocument($event)"> Nuevo </md-button>
          </section>
 
          <!-- MENU DE OPCIONES -->
@@ -72,11 +72,13 @@
                 <ul>
                   <li ng-repeat="document in documents.tod" on-finish-render>
                     <a ui-sref="index.document" class="waves-effect list-item base-padding" style="padding-left:15%" ng-click="docMenuSelected($index)">
-                      <div class="pull-left truncate">
-                        {{document.name}}
-                      </div>
+                       <div layout="row" layout-align="start">
+                        <md-icon md-svg-src="{{document.icon}}" class="document-icon-16"></md-icon>
+                        <div>{{document.name}}</div>
+                       </div>
                     </a>
                   </li>
+                  <div style="height:15px;"></div>
                 </ul>
               </li>
 

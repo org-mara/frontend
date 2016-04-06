@@ -1,9 +1,73 @@
-<div layout="row" layout-align="center stretch" ng-cloak style="height: 100%;">
-  <!-- This is the TEMPLATE view.
-  <br/>
-  {{selected}} -->
+<div layout="row" layout-align="center stretch" layout-margin ng-cloak style="height: 100%;">
 
-  <doc-builder layout="column" flex="grow" ng-model="test" schema="schema" edit="true" done="done(canceled)"></doc-builder>
+  <!-- <doc-builder layout="column" flex="grow" ng-model="test" schema="schema" edit="true" done="done(canceled)"></doc-builder> -->
 
-  <!-- <doc-builder ng-model="variable" schema="" edit="true" done="click(canceled)"></doc-builder> -->
+  <div  ng-switch="todSelected.idnetifier" style="width: 100%;">
+
+    <div ng-switch-when="ACTA"> ACTA </div>
+
+    <div ng-switch-when="ANEX"> ANEXO </div>
+
+    <div ng-switch-when="NOTA"> NOTA
+
+    </div>
+
+    <div ng-switch-default> DEFAULT
+
+      <form name="notaForm">
+        <div layout="column" layout-align="space-around center" style="width: 100%;">
+
+          <!-- fecha, ciudad -->
+          <div layout="row"  layout-align="end center" style="width: 100%;">
+            <md-input-container class="md-block">
+              <label>Ciudad</label>
+              <input type="text" required md-no-asterisk name="city">
+           </md-input-container>
+           <md-input-container class="md-block">
+             <label>Fecha</label>
+             <input type="text">
+           </md-input-container>
+         </div>
+
+          <!-- destinatario -->
+          <div layout="row" style="width: 100%;">
+            <md-input-container class="md-block">
+              <label>Destinatario</label>
+              <textarea type="text" required md-no-asterisk name="city"></textarea>
+           </md-input-container>
+           </div>
+
+           <!--  Ref -->
+          <div layout="row" layout-align="start center" style="width: 100%;">
+            <span>Ref: </span>
+            <md-input-container class="md-block">
+
+              <input type="text" required md-no-asterisk name="city">
+           </md-input-container>
+          </div>
+
+          <!-- Cuerpo  -->
+          <div>
+            <md-input-container class="md-block">
+              <label>Cuerpo de la nota</label>
+              <textarea type="text" required md-no-asterisk name="city"></textarea>
+           </md-input-container>
+          </div>
+
+          <!-- Firmante -->
+          <div layout="row"  layout-align="end center" style="width: 100%;">
+            <md-input-container class="md-block">
+              <label>Firmante</label>
+              <input type="text">
+            </md-input-container>
+          </div>
+
+        </div>
+    </form>
+    </div>
+
+
+  </div>
+
+
 </div>
