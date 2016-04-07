@@ -1,4 +1,8 @@
 /* Space out content a bit */
+html {
+  overflow-y: hidden !important;
+}
+
 body {
   /*padding-top: 20px;*/
   /*padding-bottom: 20px;*/
@@ -58,6 +62,33 @@ md-content:focus{
   margin-left: 0px;
   margin-bottom: 0px;
   margin-top: 0px;
+}
+
+
+/**********************************  ESTILOS PARA CALENDARIO **********************************/
+/*Estilo de la fecha seleccionada*/
+.md-default-theme .md-calendar-date.md-calendar-selected-date
+.md-calendar-date-selection-indicator,
+.md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator,
+.md-default-theme .md-calendar-date.md-focus.md-calendar-selected-date
+.md-calendar-date-selection-indicator,
+.md-calendar-date.md-focus.md-calendar-selected-date
+.md-calendar-date-selection-indicator{
+  background-color: orange;
+}
+
+/*Estilo del hover del calendario*/
+.md-calendar-date-selection-indicator:hover, .md-calendar-date-selection-indicator:hover{
+  background-color: #FFE0B2;
+}
+
+/*Estilo del border del día de hoy*/
+.md-default-theme .md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator,
+.md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator{
+  border-color: orange;
+  border-style: solid;
+  border-width: 1px;
+
 }
 
 

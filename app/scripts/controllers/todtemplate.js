@@ -10,6 +10,9 @@
 angular.module('frontendApp')
   .controller('TodtemplateCtrl',  ['$scope', function ($scope) {
 
+
+  $scope.myDate = new Date();
+
     // console.log($scope);
 
     $scope.schema = {

@@ -1,8 +1,8 @@
-<div layout="row" layout-align="center stretch" layout-margin ng-cloak style="height: 100%;">
+<div layout="row" ng-cloak style="height: 100%;">
 
   <!-- <doc-builder layout="column" flex="grow" ng-model="test" schema="schema" edit="true" done="done(canceled)"></doc-builder> -->
 
-  <div  ng-switch="todSelected.idnetifier" style="width: 100%;">
+  <div  ng-switch="todSelected.idnetifier" style="width: 100%; height: 100%;">
 
     <div ng-switch-when="ACTA"> ACTA </div>
 
@@ -12,58 +12,60 @@
 
     </div>
 
-    <div ng-switch-default> DEFAULT
+    <div ng-switch-default style="height: 100%;"> DEFAULT
 
-      <form name="notaForm">
-        <div layout="column" layout-align="space-around center" style="width: 100%;">
+
+
+        <md-card style="margin-left: 16px; margin-right: 16px;padding-top: 24px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; height: 95%">
 
           <!-- fecha, ciudad -->
           <div layout="row"  layout-align="end center" style="width: 100%;">
-            <md-input-container class="md-block">
+            <!-- <md-content> -->
+            <md-input-container style="margin: 0;" class="md-block">
               <label>Ciudad</label>
               <input type="text" required md-no-asterisk name="city">
-           </md-input-container>
-           <md-input-container class="md-block">
-             <label>Fecha</label>
-             <input type="text">
-           </md-input-container>
-         </div>
+            </md-input-container>,
+            <!-- <md-input-container style="margin: 0;" class="md-block">
+              <label>Fecha</label>
+              <input type="text">
+            </md-input-container> -->
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+          <!-- </md-content> -->
+          </div>
 
           <!-- destinatario -->
           <div layout="row" style="width: 100%;">
-            <md-input-container class="md-block">
+            <md-input-container style="margin: 0;" class="md-block">
               <label>Destinatario</label>
-              <textarea type="text" required md-no-asterisk name="city"></textarea>
-           </md-input-container>
-           </div>
+              <textarea type="text" columns="1"></textarea>
+            </md-input-container>
+          </div>
 
-           <!--  Ref -->
+          <!--  Ref -->
           <div layout="row" layout-align="start center" style="width: 100%;">
             <span>Ref: </span>
-            <md-input-container class="md-block">
-
-              <input type="text" required md-no-asterisk name="city">
-           </md-input-container>
+            <md-input-container style="margin: 0; width: 50%;" class="md-block">
+              <input type="text">
+            </md-input-container>
           </div>
 
           <!-- Cuerpo  -->
-          <div>
-            <md-input-container class="md-block">
+          <div style="width: 100%;">
+            <md-input-container style="margin: 0;" class="md-block">
               <label>Cuerpo de la nota</label>
-              <textarea type="text" required md-no-asterisk name="city"></textarea>
-           </md-input-container>
+              <textarea type="text" style="width:100%;" rows="10"></textarea>
+            </md-input-container>
           </div>
 
           <!-- Firmante -->
-          <div layout="row"  layout-align="end center" style="width: 100%;">
-            <md-input-container class="md-block">
+          <div layout="row"  layout-align="end end" style="width: 100%;">
+            <md-input-container style="margin: 0;" class="md-block">
               <label>Firmante</label>
               <input type="text">
             </md-input-container>
           </div>
 
-        </div>
-    </form>
+        </md-card>
     </div>
 
 

@@ -28,6 +28,16 @@ angular
     .accentPalette('orange');
   })
 
+  // ******************************** CALENDARIO ******************************** //
+  .config(function($mdDateLocaleProvider) {
+    // Español
+    $mdDateLocaleProvider.months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    $mdDateLocaleProvider.shortMonths = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Oct', 'Nov', 'Dic'];
+    $mdDateLocaleProvider.days = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+    $mdDateLocaleProvider.shortDays = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'];
+
+  })
+
   .config(function ($stateProvider, $urlRouterProvider) {
 
     // For any unmatched url, redirect to /
