@@ -9,7 +9,9 @@
     <div ng-switch-when="ANEX"> ANEXO </div>
 
     <div ng-switch-when="NOTA"> NOTA
-
+      <form method="post">
+        <textarea ui-tinymce ng-model="tinymceModel"></textarea>
+      </form>
     </div>
 
     <div ng-switch-default style="height: 100%;"> DEFAULT

@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'ngMaterial',
     'ui.router',
-    'cendra.builder'
+    'cendra.builder',
+    'ui.tinymce'
   ])
 
   // COLOR
