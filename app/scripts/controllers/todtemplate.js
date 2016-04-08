@@ -19,8 +19,33 @@ angular.module('frontendApp')
 
 
  $scope.tinymceOptions = {
-   selector: 'textarea',  // change this value according to your HTML
-   language_url : 'langs/es.js'  // site absolute URL
+   selector: 'textarea',          // change this value according to your HTML
+   language_url : 'langs/es.js',   // site absolute URL
+   theme: "modern",               //Hace uso del skin agregado
+   skin: 'light',
+    menu: {},
+    // menubar: true,
+    plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
+      'code fullscreen insertdatetime media nonbreaking save table directionality	emoticons template textcolor'
+    ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
+    toolbar: [
+      'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify | outdent indent blockquote | bullist numlist',
+      'hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+      'save cancel table ltr rtl emoticons template forecolor backcolor'
+    ]
+   // Tamaño maximo que el usuario puede estirar toda la interfaz
+   //  max_height: 500
+   //  max_width: 500
+
+   // Alto del area editable en pixeles
+   //height : 500
+
+  //Para saber si el cuerpo del editor ha sido clickeado
+  //  setup: function(editor) {
+  //   editor.on('click', function(e) {
+  //     console.log('Editor was clicked');
+  //   });
+  // }
  };
 
     $scope.schema = {
