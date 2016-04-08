@@ -20,47 +20,46 @@
 
           <!-- fecha, ciudad -->
           <div layout="row"  layout-align="end center" style="width: 100%;">
-            <!-- <md-content> -->
-            <md-input-container style="margin: 0;" class="md-block">
-              <label>Ciudad</label>
-              <input type="text" required md-no-asterisk name="city">
-            </md-input-container>,
-            <!-- <md-input-container style="margin: 0;" class="md-block">
-              <label>Fecha</label>
-              <input type="text">
-            </md-input-container> -->
-            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-          <!-- </md-content> -->
+
+            <div>
+              <md-input-container style="margin: 0px;" class="md-block">
+                <label class="md-subhead">Ciudad</label>
+                <input ng-model="cityDefault" type="text">
+              </md-input-container>
+            </div>
+,
+            <div style="margin-bottom: 22px;">
+              <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+            </div>
           </div>
 
           <!-- destinatario -->
           <div layout="row" style="width: 100%;">
-            <md-input-container style="margin: 0;" class="md-block">
-              <label>Destinatario</label>
-              <textarea type="text" columns="1"></textarea>
+            <md-input-container style="margin: 0px; width: 25%;" class="md-block">
+              <label class="md-subhead">Destinatario</label>
+              <textarea ng-model="recipientDefault" type="text" columns="1"></textarea>
             </md-input-container>
           </div>
 
           <!--  Ref -->
-          <div layout="row" layout-align="start center" style="width: 100%;">
-            <span>Ref: </span>
-            <md-input-container style="margin: 0; width: 50%;" class="md-block">
-              <input type="text">
+          <div layout="row" >
+            <md-input-container flex-offset="20" flex="80" class="md-block">
+              <input type="text" ng-model="refDEfault">
             </md-input-container>
           </div>
 
           <!-- Cuerpo  -->
           <div style="width: 100%;">
-            <md-input-container style="margin: 0;" class="md-block">
-              <label>Cuerpo de la nota</label>
+            <md-input-container class="md-block">
+              <label class="md-subhead">Cuerpo de la nota</label>
               <textarea type="text" style="width:100%;" rows="10"></textarea>
             </md-input-container>
           </div>
 
           <!-- Firmante -->
           <div layout="row"  layout-align="end end" style="width: 100%;">
-            <md-input-container style="margin: 0;" class="md-block">
-              <label>Firmante</label>
+            <md-input-container style="margin: 0px;" class="md-block">
+              <label class="md-subhead">Firmante</label>
               <input type="text">
             </md-input-container>
           </div>

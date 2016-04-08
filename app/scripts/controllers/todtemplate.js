@@ -12,7 +12,9 @@ angular.module('frontendApp')
 
 
   $scope.myDate = new Date();
-
+  $scope.cityDefault = "Córdoba";
+  $scope.recipientDefault = "Sr/a.\nUniversidad Nacional de Córdoba\nS_____________/_____________D";
+  $scope.refDEfault = "Ref: ";
     // console.log($scope);
 
     $scope.schema = {
