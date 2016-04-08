@@ -17,6 +17,12 @@ angular.module('frontendApp')
   $scope.refDEfault = "Ref: ";
     // console.log($scope);
 
+
+ $scope.tinymceOptions = {
+   selector: 'textarea',  // change this value according to your HTML
+   language_url : 'langs/es.js'  // site absolute URL
+ };
+
     $scope.schema = {
       _id: "56fc34da09a98486535f030f",
       objDescription: {
