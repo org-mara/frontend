@@ -26,7 +26,7 @@ angular.module('frontendApp')
     menu: {},
     // menubar: true,
     plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
-      'code fullscreen insertdatetime media nonbreaking save table directionality	emoticons template textcolor'
+      'code fullscreen insertdatetime media nonbreaking save table template textcolor'
     ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
     toolbar: [
       'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify | outdent indent blockquote | bullist numlist',
