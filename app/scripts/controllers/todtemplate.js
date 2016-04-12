@@ -16,6 +16,9 @@ angular.module('frontendApp')
   $scope.recipientDefault = "Sr/a.";
   $scope.refDEfault = "Ref: ";
     // console.log($scope);
+    var vm = this;
+    vm.tinymceModel = null;
+
 
 
  $scope.tinymceOptions = {
@@ -26,19 +29,35 @@ angular.module('frontendApp')
     menu: {},
     // menubar: true,
     plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
-      'code fullscreen insertdatetime media nonbreaking save table template textcolor'
+    'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern'
     ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
     toolbar: [
-      'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify | outdent indent blockquote | bullist numlist',
-      'hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'save cancel table ltr rtl emoticons template forecolor backcolor'
-    ]
+      'undo redo | cut copy paste | bold italic | formatselect | outdent indent blockquote | bullist numlist',
+      'bullist numlist hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+      'save cancel table | ltr rtl | emoticons template forecolor backcolor'
+    ],
+  //  save_onsavecallback: function () { console.log('Saved'); }
+
+    textpattern_patterns: [
+         {start: '*', end: '*', format: 'italic'},
+         {start: '**', end: '**', format: 'bold'},
+         {start: '#', format: 'h1'},
+         {start: '##', format: 'h2'},
+         {start: '###', format: 'h3'},
+         {start: '####', format: 'h4'},
+         {start: '#####', format: 'h5'},
+         {start: '######', format: 'h6'},
+         {start: '1. ', cmd: 'InsertOrderedList'},
+         {start: '* ', cmd: 'InsertUnorderedList'},
+         {start: '- ', cmd: 'InsertUnorderedList'}
+      ],
+
    // Tamaño maximo que el usuario puede estirar toda la interfaz
    //  max_height: 500
    //  max_width: 500
 
    // Alto del area editable en pixeles
-   //height : 500
+   height : 500
 
   //Para saber si el cuerpo del editor ha sido clickeado
   //  setup: function(editor) {
@@ -46,7 +65,21 @@ angular.module('frontendApp')
   //     console.log('Editor was clicked');
   //   });
   // }
+
  };
+
+ $scope.getTextBody = function () {
+   //   console.log(vm.tinymceModel);
+   var und = new upndown();
+   und.convert(vm.tinymceModel, function(err, markdown) {
+
+          console.log(markdown);  // Outputs: # Hello, World !
+     });
+
+ };
+
+
+
 
     $scope.schema = {
       _id: "56fc34da09a98486535f030f",

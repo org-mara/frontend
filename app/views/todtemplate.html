@@ -10,8 +10,10 @@
 
     <div ng-switch-when="NOTA"> NOTA
       <form method="post">
-        <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"> </textarea>
+        <textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel"> </textarea>
       </form>
+{{vm.tinymceModel}}
+      <md-button ng-click="getTextBody()">Nelson</md-button>
     </div>
 
     <div ng-switch-default style="height: 100%;"> DEFAULT

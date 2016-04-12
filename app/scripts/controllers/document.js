@@ -32,7 +32,7 @@ angular.module('frontendApp')
         $event.stopPropagation();
       };
 
-      // Quita la aplicacion de estilos de un documento que hq sido deselecionqdo
+      // Quita la aplicacion de estilos de un documento que ha sido deselecionqdo
       $scope.deselectedDoc = function () {
         $scope.indexSelectedDoc = null;
         $scope.selectedDoc = null;

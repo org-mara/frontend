@@ -59,7 +59,8 @@ angular
       .state('index.template', {
         url: '/todtemplate',
         templateUrl: 'views/todtemplate.html',
-        controller: 'TodtemplateCtrl'
+        controller: 'TodtemplateCtrl',
+        controllerAs: 'vm'
       })
 
   });
