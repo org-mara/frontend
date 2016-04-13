@@ -4,71 +4,78 @@
 
   <div  ng-switch="todSelected.idnetifier" style="width: 100%; height: 100%;">
 
-    <div ng-switch-when="ACTA"> ACTA </div>
+    <div ng-switch-when="ACTA" style="height: 100%;">
+
+      <md-card style="margin-left: 16px; margin-right: 16px;padding-top: 24px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; height: 95%">
+
+        <div layout="row"  layout-align="center center" style="width: 100%;">
+          ACTA-UNC:123456/2016
+        </div>
+
+        <!-- fecha, ciudad -->
+        <div layout="row"  layout-align="end center" style="width: 100%;">
+          <div>
+            <md-input-container style="margin: 0px;" class="md-block">
+              <label class="md-subhead">Ciudad</label>
+              <input ng-model="cityDefault" type="text">
+            </md-input-container>
+          </div>
+          ,
+          <div style="margin-bottom: 22px;">
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+          </div>
+        </div>
+
+        <!-- destinatario -->
+        <div layout="row" style="width: 100%;">
+          <md-input-container style="margin: 0px; width: 25%;" class="md-block">
+            <label class="md-subhead">Destinatario</label>
+            <textarea ng-model="recipientDefault" type="text" columns="1"></textarea>
+          </md-input-container>
+        </div>
+
+        <!--  Ref -->
+        <div layout="row" >
+          <md-input-container flex-offset="20" flex="80" class="md-block">
+            <input type="text" ng-model="refDEfault">
+          </md-input-container>
+        </div>
+
+        <!-- Cuerpo  -->
+        <div style="width: 100%;">
+          <md-input-container class="md-block">
+            <label class="md-subhead">Cuerpo de la nota</label>
+            <textarea type="text" style="width:100%;" rows="10"></textarea>
+          </md-input-container>
+        </div>
+
+        <!-- Firmante -->
+        <div layout="row"  layout-align="end end" style="width: 100%;">
+          <md-input-container style="margin: 0px;" class="md-block">
+            <label class="md-subhead">Firmante</label>
+            <input type="text">
+          </md-input-container>
+        </div>
+
+      </md-card>
+
+    </div>
 
     <div ng-switch-when="ANEX"> ANEXO </div>
 
-    <div ng-switch-when="NOTA"> NOTA
+    <div ng-switch-when="NOTA" style="height: 100%;"> NOTA
+
       <form method="post">
-        <textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel"> </textarea>
+        <textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel" style="width: 90%; height: 90%;"> </textarea>
       </form>
-{{vm.tinymceModel}}
+      <!-- {{vm.tinymceModel}} -->
       <md-button ng-click="getTextBody()">Nelson</md-button>
+
     </div>
 
     <div ng-switch-default style="height: 100%;"> DEFAULT
 
 
-
-        <md-card style="margin-left: 16px; margin-right: 16px;padding-top: 24px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; height: 95%">
-
-          <!-- fecha, ciudad -->
-          <div layout="row"  layout-align="end center" style="width: 100%;">
-
-            <div>
-              <md-input-container style="margin: 0px;" class="md-block">
-                <label class="md-subhead">Ciudad</label>
-                <input ng-model="cityDefault" type="text">
-              </md-input-container>
-            </div>
-,
-            <div style="margin-bottom: 22px;">
-              <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-            </div>
-          </div>
-
-          <!-- destinatario -->
-          <div layout="row" style="width: 100%;">
-            <md-input-container style="margin: 0px; width: 25%;" class="md-block">
-              <label class="md-subhead">Destinatario</label>
-              <textarea ng-model="recipientDefault" type="text" columns="1"></textarea>
-            </md-input-container>
-          </div>
-
-          <!--  Ref -->
-          <div layout="row" >
-            <md-input-container flex-offset="20" flex="80" class="md-block">
-              <input type="text" ng-model="refDEfault">
-            </md-input-container>
-          </div>
-
-          <!-- Cuerpo  -->
-          <div style="width: 100%;">
-            <md-input-container class="md-block">
-              <label class="md-subhead">Cuerpo de la nota</label>
-              <textarea type="text" style="width:100%;" rows="10"></textarea>
-            </md-input-container>
-          </div>
-
-          <!-- Firmante -->
-          <div layout="row"  layout-align="end end" style="width: 100%;">
-            <md-input-container style="margin: 0px;" class="md-block">
-              <label class="md-subhead">Firmante</label>
-              <input type="text">
-            </md-input-container>
-          </div>
-
-        </md-card>
     </div>
 
 

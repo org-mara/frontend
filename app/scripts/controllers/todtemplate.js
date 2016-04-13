@@ -16,8 +16,8 @@ angular.module('frontendApp')
   $scope.recipientDefault = "Sr/a.";
   $scope.refDEfault = "Ref: ";
     // console.log($scope);
-    var vm = this;
-    vm.tinymceModel = null;
+  var vm = this;
+  vm.tinymceModel = null;
 
 
 
@@ -26,16 +26,28 @@ angular.module('frontendApp')
    language_url : 'langs/es.js',   // site absolute URL
    theme: "modern",               //Hace uso del skin agregado
    skin: 'light',
-    menu: {},
+    // menu: {
+    //    view: {title: 'Happy', items: 'code'}
+    // },
     // menubar: true,
-    plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
-    'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern'
-    ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
-    toolbar: [
-      'undo redo | cut copy paste | bold italic | formatselect | outdent indent blockquote | bullist numlist',
-      'bullist numlist hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-      'save cancel table | ltr rtl | emoticons template forecolor backcolor'
-    ],
+
+    // plugins: [' hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
+    // 'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern preview image'
+    // ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
+    //  menubar: "insert",
+    // toolbar:[
+    //   'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify  | outdent indent blockquote | bullist numlist',
+    //   'bullist numlist hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+    //   'table | ltr rtl | emoticons template forecolor backcolor'
+    // ],
+
+    plugins: [
+        'advlist autolink lists link image charmap print preview anchor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table contextmenu paste code'
+      ],
+      toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+
   //  save_onsavecallback: function () { console.log('Saved'); }
 
     textpattern_patterns: [
@@ -52,12 +64,36 @@ angular.module('frontendApp')
          {start: '- ', cmd: 'InsertUnorderedList'}
       ],
 
+
+      // Tamaño del previsualizador
+      theme_advanced_buttons3_add : "preview",
+      plugin_preview_width : "400",
+      plugin_preview_height : "600",
+
+      // setup: function (ed) {
+      //   var header = "<header>ABCD</header>";
+      //   var footer = "<div>footer</div>";
+      //   var content = ed.getContent();
+      //
+      //   content = header + vm.tinymceModel + footer;
+      //    ed.setContent(content);
+      //
+      // },
+      setup: function(editor) {
+        editor.on('click', function(e) {
+          var header = "<header>ABCD</header>";
+          var footer = "<div>footer</div>";
+          e.setContent(header);
+          console.log('Editor was clicked');
+        });
+      },
+
    // Tamaño maximo que el usuario puede estirar toda la interfaz
    //  max_height: 500
    //  max_width: 500
 
    // Alto del area editable en pixeles
-   height : 500
+   height : "100%"
 
   //Para saber si el cuerpo del editor ha sido clickeado
   //  setup: function(editor) {
@@ -70,11 +106,12 @@ angular.module('frontendApp')
 
  $scope.getTextBody = function () {
    //   console.log(vm.tinymceModel);
-   var und = new upndown();
-   und.convert(vm.tinymceModel, function(err, markdown) {
 
-          console.log(markdown);  // Outputs: # Hello, World !
-     });
+
+  //  var und = new upndown();
+  //  und.convert(vm.tinymceModel, function(err, markdown) {
+  //         console.log(markdown);  // Outputs: # Hello, World !
+  //    });
 
  };
 
