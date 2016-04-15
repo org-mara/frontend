@@ -22,11 +22,19 @@ body {
 
 
 /**********************************  ESTILOS PARA EDITOR DE TEXTO **********************************/
+.mce-tinymce{
+  border: 1px solid !important;
+  border-color: #CFD8DC !important;
+}
+
 .mce-btn.mce-active, .mce-btn.mce-active:hover{
     background-color: #E0E0E0 !important;
     border-color: #E0E0E0 !important;
 }
 
+.mce-menu-item:hover {
+    background-color: orange !important;
+}
 
 /**********************************  ESTILOS PARA DOCUMENT.html **********************************/
 md-content{

@@ -71,7 +71,7 @@
 
       <md-card style="margin-left: 16px; margin-right: 16px;padding-top: 24px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; height: 95%">
 
-        <div layout="row"  layout-align="center center" style="width: 100%;">
+        <div layout="row" layout-align="center center" style="width: 100%;">
           ACTA-UNC:123456/2016
         </div>
 
@@ -97,14 +97,15 @@
           </md-input-container>
         </div>
 
-        <md-divider></md-divider>
+        <!-- <md-divider></md-divider> -->
 
-        <div layout="column" layout-align="start center" style="width: 100%; height: 90%; margin-top: 15px;">
+        <div layout="column" layout-align="start center">
         <!-- <form method="post"> -->
           <textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel"> </textarea>
           <!-- </form> -->
           <!-- {{vm.tinymceModel}} -->
         </div>
+
         <md-button ng-click="getTextBody()">Test</md-button>
 
       </md-card>
