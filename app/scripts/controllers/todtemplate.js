@@ -21,6 +21,17 @@ angular.module('frontendApp')
 
 
 
+
+ $scope.getContent = function() {
+    console.log('Editor content:', vm.tinymceModel);
+  };
+
+  $scope.setContent = function() {
+    vm.tinymceModel = 'Time: ' + (new Date());
+  };
+
+
+
  $scope.tinymceOptions = {
    selector: 'textarea',          // change this value according to your HTML
    language_url : 'langs/es.js',   // site absolute URL
@@ -51,11 +62,11 @@ angular.module('frontendApp')
     templates: [
             {title: 'Plantilla Test', description: 'Descripción ...', url:'../../views/templates/templateTest.html'} //put full path to url
         ],
-
     // template_replace_values : {
     //                username : "Jack Black",
     //                staffid : "991234"
     //        },
+
     // toolbar:[
     //   'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify  | outdent indent blockquote | bullist numlist',
     //   'hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
@@ -105,9 +116,7 @@ angular.module('frontendApp')
       // },
       setup: function(editor) {
         editor.on('click', function(e) {
-          var header = "<header>ABCD</header>";
-          var footer = "<div>footer</div>";
-          // e.setContent(header);
+          vm.tinymceModel = 'Time: ' + (new Date());
           console.log('Editor was clicked');
         });
       },
@@ -130,7 +139,7 @@ angular.module('frontendApp')
  };
 
  $scope.getTextBody = function () {
-      console.log(vm.tinymceModel);
+    console.log(vm.tinymceModel);
 
 
   //  var und = new upndown();
