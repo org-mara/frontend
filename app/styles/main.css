@@ -8,12 +8,25 @@ body {
   /*padding-bottom: 20px;*/
 }
 
+/*.mce-toolbar .mce-btn i {
+  color: #757575 !important;
+}*/
 
+
+/**********************************  ESTILOS DE SELEECION EN DIALOGO NEWTOD.html **********************************/
 .tod-selected:focus{
   outline: none;
-background-color: #CFD8DC;
-    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
+  background-color: #EEEEEE;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
   }
+
+
+/**********************************  ESTILOS PARA EDITOR DE TEXTO **********************************/
+.mce-btn.mce-active, .mce-btn.mce-active:hover{
+    background-color: #E0E0E0 !important;
+    border-color: #E0E0E0 !important;
+}
+
 
 /**********************************  ESTILOS PARA DOCUMENT.html **********************************/
 md-content{

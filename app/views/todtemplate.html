@@ -65,15 +65,50 @@
 
     <div ng-switch-when="NOTA" style="height: 100%;"> NOTA
 
-      <form method="post">
-        <textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel" style="width: 90%; height: 90%;"> </textarea>
-      </form>
-      <!-- {{vm.tinymceModel}} -->
-      <md-button ng-click="getTextBody()">Nelson</md-button>
-
     </div>
 
     <div ng-switch-default style="height: 100%;"> DEFAULT
+
+      <md-card style="margin-left: 16px; margin-right: 16px;padding-top: 24px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px; height: 95%">
+
+        <div layout="row"  layout-align="center center" style="width: 100%;">
+          ACTA-UNC:123456/2016
+        </div>
+
+        <!-- fecha, ciudad -->
+        <div layout="row"  layout-align="end center" style="width: 100%;">
+          <div>
+            <md-input-container style="margin: 0px;" class="md-block">
+              <label class="md-subhead">Ciudad</label>
+              <input ng-model="cityDefault" type="text">
+            </md-input-container>
+          </div>
+          ,
+          <div style="margin-bottom: 22px;">
+            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+          </div>
+        </div>
+
+        <!-- destinatario -->
+        <div layout="row" style="width: 100%;">
+          <md-input-container style="margin: 0px; width: 25%;" class="md-block">
+            <label class="md-subhead">Destinatario</label>
+            <textarea ng-model="recipientDefault" type="text" columns="1"></textarea>
+          </md-input-container>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div layout="column" layout-align="start center" style="width: 100%; height: 90%; margin-top: 15px;">
+        <!-- <form method="post"> -->
+          <textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel"> </textarea>
+          <!-- </form> -->
+          <!-- {{vm.tinymceModel}} -->
+        </div>
+        <md-button ng-click="getTextBody()">Test</md-button>
+
+      </md-card>
+
 
 
     </div>

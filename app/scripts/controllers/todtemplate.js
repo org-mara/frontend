@@ -25,31 +25,46 @@ angular.module('frontendApp')
    selector: 'textarea',          // change this value according to your HTML
    language_url : 'langs/es.js',   // site absolute URL
    theme: "modern",               //Hace uso del skin agregado
-   skin: 'light',
+   skin: 'light',             //skin default: lightgray
     // menu: {
     //    view: {title: 'Happy', items: 'code'}
     // },
-    // menubar: true,
 
-    // plugins: [' hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
-    // 'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern preview image'
-    // ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
-    //  menubar: "insert",
+
+
+    menu: {
+      file: {title: 'File', items: 'newdocument | print'},
+      edit: {title: 'Edit', items: 'undo redo | cut copy paste | searchreplace | selectall'},
+      insert: {title: 'Insert', items: 'link | image | hr pagebreak | charmap'},
+      view: {title: 'View', items: 'visualaid fullscreen preview'},
+      format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | removeformat'},
+      table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
+      // tools: {title: 'Tools', items: 'code'}
+    },
+    toolbar: 'fontsizeselect bold italic underline strikethrough superscript subscript | removeformat | alignleft aligncenter alignright alignjustify | outdent indent blockquote ltr rtl | bullist numlist | link image hr pagebreak | preview fullscreen',
+
+    plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
+    'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern preview image contextmenu'
+    ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
+
     // toolbar:[
     //   'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify  | outdent indent blockquote | bullist numlist',
-    //   'bullist numlist hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+    //   'hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
     //   'table | ltr rtl | emoticons template forecolor backcolor'
     // ],
 
-    plugins: [
-        'advlist autolink lists link image charmap print preview anchor',
-        'searchreplace visualblocks code fullscreen',
-        'insertdatetime media table contextmenu paste code'
-      ],
-      toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
 
-  //  save_onsavecallback: function () { console.log('Saved'); }
+    // true: Habilita que se utilice el corrector ortografico del browser
+    browser_spellcheck: true,
 
+    // true: deshabilita el menu contextual sobre las palabras en el editor
+    // contextmenu: true,
+
+    //  contextmenu_never_use_native: false,
+
+    //  save_onsavecallback: function () { console.log('Saved'); }
+
+    // Permite escribir en marckdown y se transforma a HTML al dar enter
     textpattern_patterns: [
          {start: '*', end: '*', format: 'italic'},
          {start: '**', end: '**', format: 'bold'},
@@ -66,9 +81,9 @@ angular.module('frontendApp')
 
 
       // Tamaño del previsualizador
-      theme_advanced_buttons3_add : "preview",
-      plugin_preview_width : "400",
-      plugin_preview_height : "600",
+      // theme_advanced_buttons3_add : "preview",
+      // plugin_preview_width : "400",
+      // plugin_preview_height : "600",
 
       // setup: function (ed) {
       //   var header = "<header>ABCD</header>";
@@ -83,17 +98,18 @@ angular.module('frontendApp')
         editor.on('click', function(e) {
           var header = "<header>ABCD</header>";
           var footer = "<div>footer</div>";
-          e.setContent(header);
+          // e.setContent(header);
           console.log('Editor was clicked');
         });
       },
+
 
    // Tamaño maximo que el usuario puede estirar toda la interfaz
    //  max_height: 500
    //  max_width: 500
 
    // Alto del area editable en pixeles
-   height : "100%"
+    height : "300"
 
   //Para saber si el cuerpo del editor ha sido clickeado
   //  setup: function(editor) {
@@ -105,7 +121,7 @@ angular.module('frontendApp')
  };
 
  $scope.getTextBody = function () {
-   //   console.log(vm.tinymceModel);
+      console.log(vm.tinymceModel);
 
 
   //  var und = new upndown();
