@@ -35,7 +35,7 @@ angular.module('frontendApp')
     menu: {
       file: {title: 'File', items: 'newdocument | print'},
       edit: {title: 'Edit', items: 'undo redo | cut copy paste | searchreplace | selectall'},
-      insert: {title: 'Insert', items: 'link | image | hr pagebreak | charmap'},
+      insert: {title: 'Insert', items: 'link | image | hr pagebreak | charmap | template'},
       view: {title: 'View', items: 'visualaid fullscreen preview'},
       format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | removeformat'},
       table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
@@ -47,6 +47,15 @@ angular.module('frontendApp')
     'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern preview image contextmenu'
     ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
 
+    //Personaliza el template que se inserta
+    templates: [
+            {title: 'Plantilla Test', description: 'Descripción ...', url:'../../views/templates/templateTest.html'} //put full path to url
+        ],
+
+    // template_replace_values : {
+    //                username : "Jack Black",
+    //                staffid : "991234"
+    //        },
     // toolbar:[
     //   'undo redo | cut copy paste | fontselect fontsizeselect | bold italic underline strikethrough subscript superscript| alignleft aligncenter alignright alignjustify  | outdent indent blockquote | bullist numlist',
     //   'hr link unlink image charmap pastetext print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
