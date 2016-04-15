@@ -8,12 +8,11 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
-  .controller('MainCtrl', ['$scope', '$mdDialog', '$mdSidenav', function ($scope, $mdDialog, $mdSidenav) {
+  .controller('MainCtrl', ['$scope', '$mdDialog', '$mdSidenav', '$filter',  function ($scope, $mdDialog, $mdSidenav, $filter) {
 
 
       $scope.todSelected = null;              //seleccion en el DIALOG de TOD para instanciar un nuevo Doumento
       $scope.documentMenuSelected = null;     //seleccion de TOD en el MENU (izquierdo) dentro de la lista de Documentos
-
 
   // ******************************** SIDENAV ******************************** //
     $scope.close = function () {
@@ -23,6 +22,13 @@ angular.module('frontendApp')
     $scope.toggleSidenav = function () {
       $mdSidenav('left').toggle();
     };
+
+
+    // ******************************** AUTOCOPLETADO DE BUSCAR DOCUMENTOS  ******************************** //
+    // $scope.querySearch = function (query) {
+    //   return $filter('filter')($scope.documents.tod, {name:query});
+    // };
+
 
 
   // ******************************** CONTROLADOR del DIALOG de boton NUEVO ******************************** //
@@ -45,6 +51,7 @@ angular.module('frontendApp')
       $scope.createDoc = function() {
         $mdDialog.hide($scope.tods.unc[$scope.indice])
       };
+
 
       // ********************************  Borrador hasta tener web services ******************************** //
       $scope.tods = {

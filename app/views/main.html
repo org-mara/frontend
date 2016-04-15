@@ -16,15 +16,15 @@
       </div>
 
       <!-- Barra de busqueda -->
-      <div layout="row" layout-align="center center" style="width: 90%;">
-        <md-input-container layout="row" layout-align="center center" style="width: 50%;" md-no-float class="md-icon-float md-icon-right">
+      <div layout="row" layout-align="center center" flex="100">
+        <md-input-container layout="row" layout-align="center center" md-no-float class="md-icon-float md-icon-right mara-search-input">
           <input ng-model="tod.search" type="text" placeholder="Buscar documentos">
           <md-icon class="material-icons search" aria-label="Buscar"> search </md-icon>
         </md-input-container>
       </div>
 
       <!-- Perfil usuario -->
-      <div class="md-subhead"> romina.racca </div>
+      <div class="md-subhead" hide-sm hide-md hide-xs> romina.racca </div>
 
     </div>
   </md-toolbar>
@@ -70,7 +70,25 @@
                   </div>
                 </a>
                 <ul>
-                  <li ng-repeat="document in documents.tod" on-finish-render>
+                  <!-- <md-autocomplete
+                    md-no-cache="true"
+                    md-selected-item="selectedItem"
+                    md-search-text="searchText"
+                    md-items="item in querySearch(searchText)"
+                    md-item-text="item.name"
+                    placeholder="Buscar documento"
+                    md-menu-class="autocomplete-custom-template">
+                    <md-item-template>
+                      <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                      No states matching "{{searchText}}".
+                    </md-not-found>
+                  </md-autocomplete> -->
+
+                  <input ng-model="searchText" placeholder="Buscar tipo de documento" style="width: 100%; height: 35px; padding-left: 10px;"></input>
+
+                  <li ng-repeat="document in documents.tod | filter:searchText" on-finish-render>
                     <a ui-sref="index.document" class="waves-effect list-item base-padding" style="padding-left:15%" ng-click="docMenuSelected($index)">
                        <div layout="row" layout-align="start">
                         <md-icon md-svg-src="{{document.icon}}" class="document-icon-16"></md-icon>
