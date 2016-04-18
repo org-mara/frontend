@@ -8,17 +8,20 @@
  * Controller of the frontendApp
  */
 angular.module('frontendApp')
+
+  .directive('uncEditor', uncEditor)
   .controller('TodtemplateCtrl',  ['$scope', function ($scope) {
 
 
-  $scope.myDate = new Date();
-  $scope.cityDefault = "Córdoba";
-  $scope.recipientDefault = "Sr/a.";
-  $scope.refDEfault = "Ref: ";
+
     // console.log($scope);
   var vm = this;
-  vm.tinymceModel = null;
+  // vm.tinymceModel = null;
 
+  vm.myDate = new Date();
+  vm.cityDefault = "Córdoba";
+  vm.recipientDefault = "Sr/a.";
+  vm.refDEfault = "Ref: ";
 
 
 
@@ -123,7 +126,7 @@ angular.module('frontendApp')
 
 
    // Tamaño maximo que el usuario puede estirar toda la interfaz
-   //  max_height: 500
+    max_height: 300,
    //  max_width: 500
 
    // Alto del area editable en pixeles
@@ -341,3 +344,104 @@ angular.module('frontendApp')
       console.log($scope.test);
     }
   }]);
+
+  function uncEditor() {
+    var directive = {
+       link: link,
+       template: '<div id="unc-div-editor"><textarea ui-tinymce="tinymceOptions" ng-model="vm.tinymceModel"></textarea></div>',
+       restrict: 'E',
+       scope: {},
+       controller: UncEditorCtrl
+    };
+    return directive;
+
+    function link(scope, element, attrs) {
+      // console.log(element.context.clientHeight);
+      scope.altura = element.context.clientHeight;
+   };
+
+    function UncEditorCtrl($scope) {
+        var vm = this;
+        vm.tinymceModel = null;
+        $scope.altura = null;
+
+          $scope.$watch('altura', function (newValue, oldValue) {
+            if (newValue != oldValue) {
+              console.log($scope.altura);
+
+            }
+          });
+
+        vm.tinymceOptions = {
+          selector: 'textarea',          // change this value according to your HTML
+          language_url : 'langs/es.js',   // site absolute URL
+          theme: "modern",               //Hace uso del skin agregado
+          skin: 'light',             //skin default: lightgray
+
+           menu: {
+             file: {title: 'File', items: 'newdocument | print'},
+             edit: {title: 'Edit', items: 'undo redo | cut copy paste | searchreplace | selectall'},
+             insert: {title: 'Insert', items: 'link | image | hr pagebreak | charmap | template'},
+             view: {title: 'View', items: 'visualaid fullscreen preview'},
+             format: {title: 'Format', items: 'bold italic underline strikethrough superscript subscript | removeformat'},
+             table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'}
+           },
+           toolbar: 'fontsizeselect bold italic underline strikethrough superscript subscript | removeformat | alignleft aligncenter alignright alignjustify | outdent indent blockquote ltr rtl | bullist numlist | link image hr pagebreak | preview fullscreen',
+
+           plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
+           'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern preview image contextmenu'
+           ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
+
+           //Personaliza el template que se inserta
+           templates: [
+                   {title: 'Plantilla Test', description: 'Descripción ...', url:'../../views/templates/templateTest.html'} //put full path to url
+               ],
+
+           // true: Habilita que se utilice el corrector ortografico del browser
+           browser_spellcheck: true,
+
+           // true: deshabilita el menu contextual sobre las palabras en el editor
+           // contextmenu: true,
+
+           //  contextmenu_never_use_native: false,
+
+           //  save_onsavecallback: function () { console.log('Saved'); }
+
+           // Permite escribir en marckdown y se transforma a HTML al dar enter
+           textpattern_patterns: [
+                {start: '*', end: '*', format: 'italic'},
+                {start: '**', end: '**', format: 'bold'},
+                {start: '#', format: 'h1'},
+                {start: '##', format: 'h2'},
+                {start: '###', format: 'h3'},
+                {start: '####', format: 'h4'},
+                {start: '#####', format: 'h5'},
+                {start: '######', format: 'h6'},
+                {start: '1. ', cmd: 'InsertOrderedList'},
+                {start: '* ', cmd: 'InsertUnorderedList'},
+                {start: '- ', cmd: 'InsertUnorderedList'}
+             ],
+
+
+             // Tamaño del previsualizador
+             // theme_advanced_buttons3_add : "preview",
+             // plugin_preview_width : "400",
+             // plugin_preview_height : "600",
+
+
+             setup: function(editor) {
+               editor.on('click', function(e) {
+                 vm.tinymceModel = 'Time: ' + (new Date());
+                 console.log('Editor was clicked');
+               });
+             },
+
+          // Tamaño maximo que el usuario puede estirar toda la interfaz
+          //  max_height: 300,
+          //  max_width: 500
+
+          // Alto del area editable en pixeles
+          //  height : "300"
+        };
+    };
+  };
