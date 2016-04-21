@@ -19,7 +19,7 @@ angular
     'ngMaterial',
     'ui.router',
     'cendra.builder',
-    'ui.tinymce'
+    'ui.tinymce',
   ])
 
   // COLOR
