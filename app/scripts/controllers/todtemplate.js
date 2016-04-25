@@ -38,8 +38,6 @@ angular.module('frontendApp')
  // };
 
 
-
-
     $scope.schema = {
       _id: "56fc34da09a98486535f030f",
       objDescription: {
@@ -102,9 +100,6 @@ angular.module('frontendApp')
       ],
       type: "object"
     };
-
-
-
 
 // [{
 // _id: "56fc34da09a98486535f030f",

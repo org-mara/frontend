@@ -21,13 +21,29 @@
       return directive;
 
       function linkFunc(scope, element, attr, ctrl) {
+          // var heightN = 0;
+
         $timeout(function () {
           ctrl.altura = element.context.clientHeight;
+          window.addEventListener('resize', function () {
+
+            element[0].querySelector('iframe').style.height = document.getElementById('unc-editor').clientHeight - getHeight() + "px";
+          });
         }, 0);
         ctrl.setHeight = function () {
-          element[0].querySelector('iframe').style.height = ctrl.altura-100 + "px";
+          $timeout(function () {
+
+
+
+            element[0].querySelector('iframe').style.height = ctrl.altura - getHeight() + "px";
+          }, 0);
         }
-        console.log(document.querySelector('body'));
+
+        function getHeight() {
+            return element[0].querySelectorAll('.mce-container-body .mce-flow-layout')[0].clientHeight +
+              element[0].querySelectorAll('.mce-container-body .mce-flow-layout')[1].clientHeight +
+              element[0].querySelectorAll('.mce-container-body .mce-flow-layout')[2].clientHeight + 30;
+        }
       }
     }
 
@@ -40,6 +56,7 @@
       vm.tinymceOptions = null;
 
       activate();
+
 
       function activate() {
 
@@ -59,8 +76,8 @@
           },
           toolbar: 'fontsizeselect bold italic underline strikethrough superscript subscript | removeformat | alignleft aligncenter alignright alignjustify | outdent indent blockquote ltr rtl | bullist numlist | link image hr pagebreak | preview fullscreen',
 
-          plugins: ['hr link image charmap paste print preview anchor pagebreak spellchecker searchreplace visualblocks visualchars',
-          'code fullscreen insertdatetime directionality media nonbreaking save table template textcolor textpattern preview image contextmenu'
+          plugins: ['anchor charmap code contextmenu directionality fullscreen hr image insertdatetime link media nonbreaking pagebreak paste print preview',
+            'save searchreplace spellchecker table template textcolor textpattern visualblocks visualchars'
         ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
 
         //Personaliza el template que se inserta
@@ -78,7 +95,7 @@
 
          resize: false,
 
-        // true: deshabilita el menu contextual sobre las palabras en el editor
+        // true: deshabilita el menu contextuald sobre la zona del editor
         // contextmenu: true,
 
         //  contextmenu_never_use_native: false,
@@ -108,10 +125,10 @@
 
 
         setup: function(editor) {
-          editor.on('click', function(e) {
-            vm.tinymceModel = 'Time: ' + (new Date());
-            console.log('Editor was clicked');
-          });
+          // editor.on('click', function(e) {
+          //   vm.tinymceModel = 'Time: ' + (new Date());
+          //   console.log('Editor was clicked');
+          // });
           editor.on('init', function (editor) {
             vm.setHeight();
           });
