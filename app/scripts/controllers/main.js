@@ -13,6 +13,23 @@ angular.module('frontendApp')
 
       $scope.todSelected = null;              //seleccion en el DIALOG de TOD para instanciar un nuevo Doumento
       $scope.documentMenuSelected = null;     //seleccion de TOD en el MENU (izquierdo) dentro de la lista de Documentos
+      $scope.loggedUser = "romina.racca";     //nombre de usuario logueado
+      $scope.color = null;                    //color ramdom para usuario logueado
+
+  // ********************************* MENU - Parte de derecha en USUARIO *********************************
+    // Colores random para el circulo de usuarioº
+    var colors = ["#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#2196F3", "#03A9F4",
+                      "#00BCD4", "#4CAF50", "#8BC34A", "#CDDC39", "#FFC107",
+                      "#FF9800", "#FF5722", "#795548", "#607D8B"];
+
+    var originatorEv;
+    this.openMenu = function($mdOpenMenu, ev) {
+      originatorEv = ev;
+      $mdOpenMenu(ev);
+    };
+
+    $scope.color = colors[Math.floor((Math.random() * (colors.length - 1)))];
+
 
   // ******************************** SIDENAV ******************************** //
     $scope.close = function () {
