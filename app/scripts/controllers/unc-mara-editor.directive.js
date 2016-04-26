@@ -64,7 +64,8 @@
           selector: 'textarea',          // change this value according to your HTML
           language_url : 'langs/es.js',   // site absolute URL
           theme: "modern",               //Hace uso del skin agregado
-          skin: 'light',             //skin default: lightgray
+          // skin: 'lightgray',             //skin default: lightgray
+          skin_url: '/skin/lightmara',
 
           menu: {
             file: {title: 'File', items: 'newdocument | print'},
