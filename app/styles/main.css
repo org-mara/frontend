@@ -23,18 +23,32 @@ body {
 
 
 /**********************************  ESTILOS PARA EDITOR DE TEXTO **********************************/
+/*Estilo para el borde del contenedor del editor */
 .mce-tinymce{
   border: 1px solid !important;
-  border-color: #CFD8DC !important;
+  border-color: #CFD8DC !important;     /*color gris claro*/
 }
 
+/*Estilo de botones hover de menu y activos de submenu*/
 .mce-btn.mce-active, .mce-btn.mce-active:hover{
-    background-color: #E0E0E0 !important;
-    border-color: #E0E0E0 !important;
+    background-color: #FFE0B2  !important;       /*color naranja claro*/
+    border-color: #FFE0B2  !important;            /*color naranja claro*/
 }
 
+/*Estilo de lista de items dentro de menu*/
 .mce-menu-item:hover {
     background-color: orange !important;
+}
+
+/*Estilo item de lista de menu selecionado*/
+.mce-menu-item:hover, .mce-menu-item.mce-selected, .mce-menu-item:focus {
+  background-color: orange !important;
+}
+
+/*Estilo de los cuadrados de Tabla -> Insertar tabla*/
+.mce-grid-border a:hover, .mce-grid-border a.mce-active{
+    background-color: orange !important;
+    border: orange !important;
 }
 
 /**********************************  ESTILOS PARA DOCUMENT.html **********************************/
