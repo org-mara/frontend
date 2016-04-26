@@ -122,6 +122,17 @@ md-content:focus{
     width: 100%;
 }
 
+/*Estilo para el input de busqeuda al estar en foco*/
+md-input-container:not(.md-input-invalid).md-input-focused .md-input{
+	border-color: white
+}
+
+/*Estilo para el icono de busqeuda al estar en foco*/
+md-input-container:not(.md-input-invalid).md-input-focused md-icon{
+	color: white
+}
+
+
 /**********************************  ESTILOS GENERALES **********************************/
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
