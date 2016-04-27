@@ -1,0 +1,50 @@
+/*caracteristicas de tabla*/
+.mce-content-body table{
+  width:20%;
+  border-spacing:1;
+  border-collapse:separate;
+  border:1px solid #aaa
+}
+
+/*fila de por medio */
+.mce-content-body table tr:nth-child(even){
+  background: #FAFAFA;
+  /*border:1px solid red*/
+}
+
+/*caracteristicas de celdas*/
+.mce-content-body table caption,.mce-content-body table td,.mce-content-body table th{
+  padding:7px 7px;
+  border:1px solid #aaa;
+}
+
+/*.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption{
+  border:1px solid #aaa;
+}*/
+
+/*.mce-resize-bar mce-resize-bar-row{
+  background-color: black !important;
+  background: red !important;
+}
+
+
+.mce-resize-bar mce-resize-bar-col{
+    background-color: black !important;
+    background: red !important;
+}*/
+
+/*
+.mce-content-body table th{
+  font-weight:400;
+  color:#6E6E6E;
+  background-position:100% 100%;
+  background-size:2px 10px;
+  background-repeat:no-repeat
+}
+*/
+
+/*
+.mce-content-body table th:last-child{
+  background:0 0
+}
+*/

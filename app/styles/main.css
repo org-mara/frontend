@@ -8,11 +8,6 @@ body {
   /*padding-bottom: 20px;*/
 }
 
-/*.mce-toolbar .mce-btn i {
-  color: #757575 !important;
-}*/
-
-
 
 /**********************************  ESTILOS DE SELEECION EN DIALOGO NEWTOD.html **********************************/
 .tod-selected:focus{
@@ -40,7 +35,7 @@ body {
     background-color: orange !important;
 }
 
-/*Estilo item de lista de menu selecionado*/
+/*Estilo del hover sobre item de una lista (lista del menu o lista de un selector desplegable)*/
 .mce-menu-item:hover, .mce-menu-item.mce-selected, .mce-menu-item:focus {
   background-color: orange !important;
 }
@@ -50,6 +45,21 @@ body {
     background-color: orange !important;
     border: orange !important;
 }
+
+/*Estilo de item selecionado en un selector*/
+.mce-menu-item-normal.mce-active{
+    background-color: #FFE0B2  !important;
+}
+
+/*Estilo de item selecionado en un selector*/
+.mce-menu-item-normal.mce-active .mce-text{
+  color: black  !important;
+}
+
+/*.mce-primary{
+  background: orange !important;
+}*/
+
 
 /**********************************  ESTILOS PARA DOCUMENT.html **********************************/
 md-content{

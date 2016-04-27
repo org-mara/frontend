@@ -89,6 +89,11 @@
         // true: Habilita que se utilice el corrector ortografico del browser
         browser_spellcheck: true,
 
+        content_css: '/skin/lightmara/skin-table.css',
+        // content_css: [
+        //   '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+        //   '//www.tinymce.com/css/codepen.min.css'
+        // ],
 
         // autoresize_min_height:
 
