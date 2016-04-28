@@ -56,10 +56,29 @@ body {
   color: black  !important;
 }
 
-/*.mce-primary{
-  background: orange !important;
-}*/
+/*Estilo de boton principal en dialogo*/
+.mce-primary{
+  background: transparent !important;
+  border-color: transparent !important;
+}
 
+/*Estilo de boton secundario en dialogo*/
+.mce-btn{
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/*Estilo de boton principal en dialogo*/
+.mce-primary:hover, .mce-primary:focus{
+  background: rgba(158,158,158,0.2) !important;
+  border-color: rgba(158,158,158,0.2) !important;
+}
+
+/*Estilo de boton secundario en dialogo*/
+.mce-btn:hover, .mce-btn:focus{
+  background: rgba(158,158,158,0.2) !important;
+  border-color: rgba(158,158,158,0.2) !important;
+}
 
 /**********************************  ESTILOS PARA DOCUMENT.html **********************************/
 md-content{
