@@ -9,7 +9,6 @@
 /*fila de por medio */
 .mce-content-body table tr:nth-child(even){
   background: #FAFAFA;
-  /*border:1px solid red*/
 }
 
 /*caracteristicas de celdas*/
@@ -18,22 +17,25 @@
   border:1px solid #aaa;
 }
 
-
-
-/*.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption{
+/*
+.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption{
   border:1px solid #aaa;
-}*/
+}
+*/
 
-/*.mce-resize-bar mce-resize-bar-row{
+/*
+.mce-resize-bar mce-resize-bar-row{
   background-color: black !important;
   background: red !important;
 }
+*/
 
-
+/*
 .mce-resize-bar mce-resize-bar-col{
     background-color: black !important;
     background: red !important;
-}*/
+}
+*/
 
 /*
 .mce-content-body table th{

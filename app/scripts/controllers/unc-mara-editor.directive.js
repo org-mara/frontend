@@ -77,9 +77,19 @@
           },
           toolbar: 'fontsizeselect bold italic underline strikethrough superscript subscript | removeformat | alignleft aligncenter alignright alignjustify | outdent indent blockquote ltr rtl | bullist numlist | link image hr pagebreak | preview fullscreen',
 
-          plugins: ['anchor charmap code contextmenu directionality fullscreen hr image insertdatetime link media nonbreaking pagebreak paste print preview',
-            'save searchreplace spellchecker table template textcolor textpattern visualblocks visualchars'
-        ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
+          // plugins: ['anchor charmap code contextmenu directionality fullscreen hr image imagetools insertdatetime link media nonbreaking pagebreak paste print preview',
+            // 'save searchreplace spellchecker table template textcolor textpattern visualblocks visualchars'
+        // ],            //Plugins necesarios para que funcionen las herramientas no basicas de toolbar
+
+      plugins: [  "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste imagetools"
+              ],
+              //  imagetools_cors_hosts: ['www.tinymce.com', 'codepen.io'],
+//imagen de prueba: //www.tinymce.com/images/glyph-tinymce@2x.png
+      // automatic_uploads: false,
+      // images_upload_url: ''
+      // imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions",
 
         //Personaliza el template que se inserta
         templates: [
@@ -95,11 +105,7 @@
         //   '//www.tinymce.com/css/codepen.min.css'
         // ],
 
-        // autoresize_min_height:
-
-        // autoresize_on_init: true,
-
-         resize: false,
+       resize: false,
 
         // true: deshabilita el menu contextuald sobre la zona del editor
         // contextmenu: true,

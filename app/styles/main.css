@@ -18,13 +18,19 @@ body {
 
 
 /**********************************  ESTILOS PARA EDITOR DE TEXTO **********************************/
+
+/*Estilo de botones:hover de Menu*/
+.mce-menubar .mce-menubtn:hover, .mce-menubar .mce-menubtn.mce-active, .mce-menubar .mce-menubtn:focus{
+  background-color: #FFE0B2  !important;       /*color naranja claro*/
+}
+
 /*Estilo para el borde del contenedor del editor */
 .mce-tinymce{
   border: 1px solid !important;
   border-color: #CFD8DC !important;     /*color gris claro*/
 }
 
-/*Estilo de botones hover de menu y activos de submenu*/
+/*Estilo de botones de menu activo y submenu activo*/
 .mce-btn.mce-active, .mce-btn.mce-active:hover{
     background-color: #FFE0B2  !important;       /*color naranja claro*/
     border-color: #FFE0B2  !important;            /*color naranja claro*/
@@ -69,15 +75,19 @@ body {
 }
 
 /*Estilo de boton principal en dialogo*/
-.mce-primary:hover, .mce-primary:focus{
+/*.mce-primary:hover, .mce-primary:focus{
   background: rgba(158,158,158,0.2) !important;
   border-color: rgba(158,158,158,0.2) !important;
-}
+}*/
 
 /*Estilo de boton secundario en dialogo*/
-.mce-btn:hover, .mce-btn:focus{
+/*.mce-btn:hover, .mce-btn:focus{
   background: rgba(158,158,158,0.2) !important;
   border-color: rgba(158,158,158,0.2) !important;
+}*/
+
+.mce-btn:hover{
+    background-color: #FFE0B2  !important;       /*color naranja claro*/
 }
 
 /**********************************  ESTILOS PARA DOCUMENT.html **********************************/
